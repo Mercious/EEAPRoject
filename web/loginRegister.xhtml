@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:em="http://java.sun.com/jsf/composite/emcomp" xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://java.sun.com/jsf/html">
+<ui:composition template="resources/emcomp/pageWithFooterHeader.xhtml">
+    <ui:param name="pageTitle" value="Login / Registrierung"/>
+    <ui:define name="content">
+        <div class="container white">
+            <h:messages errorClass="errorMessage"/>
+            <h2 class="orangeText">Login / Registrierung</h2>
+            <div>Hier können Sie sich entweder mit Ihren bereits vorhandenen Kundendaten einloggen oder kostenlos einen neuen Account anlegen!</div>
+
+            <div id="loginArea" class="loginRegisterTeaser">
+                <h3>Ich bin bereits Kunde!</h3>
+                <div class="loginboxText greyText">Dann geben melden Sie sich bitte mit ihren Login-Daten hier an:</div>
+                <h:form id="loginForm">
+                    <h:outputLabel for="eMail">E-Mail Adresse:</h:outputLabel>
+                    <h:inputText id="eMail" name="eMail" required="true" value="#{loginUserManager.userName}"/>
+                    <h:outputLabel for="password">Passwort:</h:outputLabel>
+                    <h:inputText id="password" name="password" type="password" required="true"
+                                 value="#{loginUserManager.password}"/>
+                    <h:commandButton value="Anmelden" action="#{loginUserManager.login()}"/>
+                </h:form>
+            </div>
+
+            <div class="loginRegisterTeaser" id="registerFormParent">
+                <h3>Ich bin noch kein Kunde!</h3>
+                <div id="registerPitch">
+                    <div class="greyText">Dann registrieren Sie sich kostenlos an und genießen diese Vorteile:</div>
+                    <ul class="greyText">
+                        <li>Abschließen von Bestellungen</li>
+                        <li>Wöchentlicher Newsletter über die besten Deals</li>
+                        <li>Überblick über die eigene Bestellhistorie</li>
+                        <li>Personalisierte Vorschläge nach Ihren Bedürfnissen</li>
+                        <li>Und noch vieles mehr!</li>
+                    </ul>
+                    <h:commandButton id="beginRegisterButton" value="Registrierung beginnen"></h:commandButton>
+                </div>
+                <h:form id="registerForm">
+                    <p:panelGrid columns="3" cellspacing="10">
+                        <h:outputLabel for="userName">User Name:
+                            <h:inputText id="userName" name="userName" value="#{registerData.userName}" label="User-Name"/>
+                        </h:outputLabel>
+                        <h:outputLabel for="eMailRegister">E-Mail:
+                            <h:inputText id="eMailRegister" name="eMail" value="#{registerData.email}" label="E-Mail"/>
+                        </h:outputLabel>
+                        <h:outputLabel for="passwordRegister">Passwort:
+                            <h:inputSecret type="password" id="passwordRegister" name="password"
+                                           value="#{registerData.password}" label="Passwort"/>
+                        </h:outputLabel>
+                        <h:outputLabel for="passwordRepeat">Passwort wiederholen:
+                            <h:inputSecret name="passwordRepeat" id="passwordRepeat"
+                                           value="#{registerData.passwordRepeat}" label="Passwort wiederholen"/>
+                        </h:outputLabel>
+                        <h:outputLabel for="firstName">Vorname:
+                            <h:inputText id="firstName" name="firstName" value="#{registerData.firstName}" label="Vorname"/>
+                        </h:outputLabel>
+                        <h:outputLabel for="lastName">Nachname:
+                            <h:inputText id="lastName" name="lastName" value="#{registerData.lastName}" label="Nachname"/>
+                        </h:outputLabel>
+                        <h:outputLabel for="streetName">Straße:
+                            <h:inputText id="streetName" name="streetName" value="#{registerData.street}" label="Straße"/>
+                        </h:outputLabel>
+                        <h:outputLabel for="streetNumber">Hausnummer:
+                            <h:inputText id="streetNumber" name="streetNumber" value="#{registerData.streetNumber}" label="Hausnummer"/>
+                        </h:outputLabel>
+                        <h:outputLabel for="zipcode">Postleitzahl:
+                            <h:inputText id="zipcode" name="zipcode" value="#{registerData.zipcode}" label="Postleitzahl"/>
+                        </h:outputLabel>
+                        <h:outputLabel for="city">Stadt:
+                            <h:inputText id="city" name="city" value="#{registerData.city}" label="Stadt"/>
+                        </h:outputLabel>
+                    </p:panelGrid>
+                    <h:commandButton value="Registrieren" action="#{registerUserManager.registerUser()}"/>
+                </h:form>
+            </div>
+        </div>
+    </ui:define>
+</ui:composition>
+</html>

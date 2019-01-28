@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<header>
+<noscript>Bitte aktivieren Sie JavaScript, diese Website funktioniert nur mit JavaScript!</noscript>
+<div class="container orange">
+    <div class="leftNav">
+        <c:if test="#{loginUserManager.loggedIn}">
+            <h:form>
+                <img src="WebContent/png/userIcon.png" class="left"/>
+                <div class="inlineBlock headerUserName left">#{loginUserManager.currentUser.firstName},<br/>#{loginUserManager.currentUser.lastName}</div>
+                <h:commandButton action="#{loginUserManager.logout()}" id="logoutButton" class="logoutButton inlineBlock left" value="Ausloggen"/>
+            </h:form>
+        </c:if>
+        <form action="/shop/search" method="get">
+            <input type="text" class="searchBar" placeholder="Suchebegriff eingeben ..." name="searchTerm"/>
+            <input type="submit" style="display:none"/>
+        </form>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="/shop/">Startseite</a></li>
+            <li><a href="configurator">PC-Konfigurator</a></li>
+            <li><a href="contact">Kontakt</a></li>
+            <c:if test="${empty currentUser}">
+                <li><a href="${pageContext.request.contextPath}/shop/loginRegister.xhtml">Registrieren/Login</a></li>
+            </c:if>
+            <c:if test="${currentUser.userRole == 'Admin'}">
+                <li><a href="adminArea">Produktpflege</a></li>
+            </c:if>
+        </ul>
+    </nav>
+</div>
+</header>
+
+</html>

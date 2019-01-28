@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:em="http://java.sun.com/jsf/composite/emcomp" xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:composition template="resources/emcomp/pageWithFooterHeader.xhtml">
+    <ui:param name="pageTitle" value="pcConfigurator Home" />
+    <ui:define name="content">
+        <section>
+            <div class="container white">
+                <h1> Herzlich Willkommen</h1>
+                <p> PC selbst am PC Konfigurator zusammenstellen - egal ob Gaming PC oder Office Rechner! Unser PC Konfigurator erlaubt es, einen ganz persönlichen Computer von Grund auf selbst zu konfigurieren. Ob Gaming-, Office- oder Silent-PC - konfiguriere ihn Dir selber, ganz ohne Einschränkungen! Egal für welchen Verwendungszweck Du einen neuen PC oder eine neue Workstation kaufst: mit dem extrem umfangreichen PC Konfigurator im MIFCOM PC Onlineshop wird der Wunsch-Computer ganz schnell Realität.
+                    Hier kannst Du nach Lust und Laune drauflos konfigurieren - erstelle Deinen neuen PC von Grund auf selbst! Übertaktung, besonders leise Komponenten, auf das Minimum reduziert, als Multimedia Center geeignet, für Extreme Gamer oder einfach als Familien PC für zu Hause: Unser PC Konfigurator kann für jedes Einsatzgebiet angewendet werden.
+                </p>
+
+                <p>
+                    Mit dem PC-Store PC-Konfigurator zum Traum-PC - auch für Laien Der PC-Store Konfigurator für die persönliche Zusammenstellung eines Computers ist für Profis, aber noch viel wichtiger, auch für absoluten Laien geeignet.
+                </p>
+            </div>
+        </section>
+        <section>
+            <div class="container headline">Unsere Empfehlungen</div>
+            <div class="container">
+                <c:forEach items="#{helloWorldController.getArticleTeaserList()}" var="article">
+                    <em:articleTeaser articleDisplayName="${article.articleDisplayName}" articleID="${article.articleID}"
+                                      articlePrice="${article.price}" discountedPrice="${article.discountedPrice}"
+                                      compStatus="${article.compStatus}"/>
+                </c:forEach>
+            </div>
+        </section>
+    </ui:define>
+</ui:composition>
+</html>

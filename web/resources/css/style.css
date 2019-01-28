@@ -1,0 +1,485 @@
+
+body{
+    font: 15px/1.5 Arial, Helvetica,sans-serif;
+    padding:0;
+    margin:0;
+    background-color:darkslategray;
+    height:100%;
+}
+
+button, input[type="submit"] {
+    height: 30px;
+    width: 150px;
+    color: white;
+    background: #e8491d;
+    padding: 5px;
+    display: inline-block;
+    border: 0;
+    margin-top: 5px;
+}
+
+ul {
+    list-style-position: inside;
+}
+
+input, label {
+    display: block;
+    width: 100%;
+    margin-right: 10px;
+}
+
+h3 {
+    margin: 5px 0 5px 0;
+}
+
+/* Global */
+.container{
+    width:80%;
+    margin:10px auto 0 auto;
+    padding-bottom: 5px;
+    padding-left: 3px;
+}
+
+
+
+.white {
+    background: white;
+}
+
+.orange {
+    background: #e8491d;
+}
+ul{
+    margin:0;
+    padding:0;
+}
+
+
+/* Header **/
+header{
+    padding-top:5px;
+    min-height: 70px;
+    border-bottom:#e8491d 3px solid;
+    background: #e8491d;
+
+}
+
+header a{
+    color:#ffffff;
+    text-decoration:none;
+    text-transform: uppercase;
+    font-size:16px;
+}
+
+header li{
+    float:left;
+    background: #e8491d;
+    padding-right: 50px;
+    list-style-type: none;
+
+}
+
+header li:last-child {
+    padding-right: 0;
+}
+
+header img {
+}
+
+
+
+header #header-menu h1, header .current a{
+    font-weight:bold;
+    background: #e8491d;
+}
+
+
+header #header-menu h1{
+    float:left;
+    margin:0;
+    font-size: 20px;
+
+
+}
+
+header nav{
+    float:right;
+    margin-top:10px;
+    padding-top: 20px;
+}
+
+
+
+header a:hover{
+    font-weight:bolder;
+}
+
+footer{
+    padding:0px;
+    color:#ffffff;
+    background-color:#e8491d;
+    text-align: center;
+    clear: both;
+    width: 100%;
+    height: 10%;
+
+
+}
+
+.hide {
+    display: none;
+}
+
+.articleTeaser {
+    height: 270px;
+    /* We want 6 of these in one line. We want a margin-right of 10px after each element but the last one. So we have a total margin of 5*10px, so each
+       element has to account for 50px/6 margin in it's width. We subtract that from the 100/6 original width %.
+     */
+    width: calc(16.6666666667% - 8.33333333333px);
+    margin-top: 0;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    float: left;
+    padding: 0;
+    vertical-align: top;
+    overflow: hidden;
+    position: relative;
+}
+
+/* No margin for the last child*/
+.articleTeaser:last-child {
+    margin-right: 0;
+}
+
+.articleTeaser button {
+    margin-top: 0;
+}
+
+.headline {
+    color: #e8491d;
+    font: 25px/2.5 Arial, Helvetica,sans-serif;
+}
+
+.centeredImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50px;
+    height: 50px;
+}
+
+.priceLabel {
+    background: lightyellow;
+    font-size: 25px;
+    font-weight: bold;
+    height: max-content;
+    width: 147px;
+    text-align: right;
+    margin-top: 20px;
+    padding-right: 3px;
+    color: orange;
+}
+
+.discountedPriceLabel {
+    background: lightyellow;
+    font-size: 25px;
+    font-weight: bold;
+    height: max-content;
+    width: 147px;
+    text-align: right;
+    margin-top: 10px;
+    padding-right: 3px;
+    color: green;
+}
+
+.teaserName {
+    height: 40px;
+    margin-top: 5px;
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+.icon {
+    margin: 3px auto 0 10px;
+}
+
+.iconWarning {
+    margin: 40px auto 0 10px;
+}
+
+
+.lightbox {
+    display: none;
+    z-index: 1;
+    width: 100%;
+    height: max-content;
+    background-color: grey;
+    position: absolute;
+    bottom: 30%;
+    box-shadow: lightgrey;
+    padding: 2px;
+}
+
+.redText {
+    color: red;
+}
+
+.greenText {
+    color: green;
+}
+
+.orangeText {
+    color: #e8491d;
+}
+
+.greyText {
+    color: grey;
+}
+
+.loginRegisterTeaser {
+    width: 400px;
+    height: 330px;
+    background: lightgrey;
+    margin: 0 20px 0 0;
+    display: inline-block;
+    padding: 20px 5px 5px 5px;
+    vertical-align: top;
+    border: 1px #35424a solid;
+    position: relative;
+}
+
+.loginRegisterTeaser input[type="submit"] {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+.loginboxText {
+    border-bottom: 1.5px grey solid;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.errorMessage {
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.successMessage {
+    color: green;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.inlineBlock {
+    display:inline-block;
+}
+
+.headerUserName {
+    vertical-align: bottom;
+    padding-bottom: 7px;
+}
+
+#registerForm {
+    display: none;
+    width: 800px;
+}
+
+.searchBar {
+    float: left;
+    width: 350px;
+    height: 20px;
+    margin-top: 30px;
+    margin-left: 50px;
+}
+
+header form {
+    display: inline-block;
+}
+
+.leftNav {
+    float: left;
+}
+
+.logoutButton {
+    width: 100px;
+    height: 20px;
+    margin-left: 5px;
+    margin-top: 20px;
+}
+
+.configSlot {
+    height: 310px;
+    width: 200px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    float: left;
+    vertical-align: top;
+    position: relative;
+}
+
+.configHeadline {
+    height: 30px;
+    width: 100%;
+    padding-top: 3px;
+    background: grey;
+    text-align: center;
+    font-weight: bold;
+}
+
+.configAddPicture {
+    width: 50px;
+    height: 50px;
+    margin-left: 75px;
+    margin-top: 50px;
+}
+
+.configAddClaim {
+    text-align: center;
+    width: 100%;
+    height: 10px;
+}
+
+/*  Das modal design ist stark inspiriert von https://www.w3schools.com/howto/howto_css_modals.asp*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+}
+
+.modal-content-image {
+    background-color: #fefefe;
+    margin: 15% auto;
+    border: 1px solid #888;
+    min-width: 250px;
+    min-height: 250px;
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: 0;
+}
+
+
+.modal-content-test {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    height: 40%;
+}
+
+
+.modal-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.articleListItem {
+    border-top: 1px solid #888;
+    height: 30px;
+    width: 95%;
+    margin: 2px 2px 2px 2px;
+    list-style-type: none;
+}
+
+.articleListItem:hover {
+    cursor: pointer;
+    background: #e8491d;
+}
+
+.boldText {
+    font-weight: bold;
+
+}
+
+.green {
+    color: green;
+}
+
+.showImageIcon {
+    margin-top: 2px;
+    margin-right: 10px;
+}
+
+.totalPrice {
+    clear: both;
+}
+
+.changeItemButton {
+    float: right;
+}
+
+.deleteIcon {
+    margin: 40px auto 0 10px;
+}
+
+.adminAreaForm {
+    width: 300px;
+}
+
+.adminAreaForm  {
+}
+
+.shortInput {
+    width: 80px;
+}
+
+.longInput {
+    width: 500px;
+}
+
+.adminArea {
+    width: 600px;
+    padding: 5px;
+}
+
+.adminAreaLabel {
+    font-weight: bold;
+    color: #e8491d;
+}
+
+.newArticleButton {
+    height: 20px;
+    font-size: 15px;
+    padding: 1px;
+    float: right;
+}
+
+.strikethrough {
+    text-decoration: line-through;
+    font-size: 15px;
+}
