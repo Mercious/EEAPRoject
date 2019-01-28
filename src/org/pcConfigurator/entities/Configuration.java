@@ -15,14 +15,15 @@ public class Configuration {
     // Wer hat diese Konfiguration erstellt, also wem gehört sie?
     @ManyToOne
     private User creator;
+
+    // Ist hier leider ein klassisches "Many-to-Many", das nur über ein Objekt->Instanz Pattern vermeidbar wäre,
+    // Welches ich auch nicht wirklich besser fände
     @ManyToMany
     @JoinTable(name = "configuration_component",
             joinColumns = @JoinColumn(name = "component_id"),
             inverseJoinColumns = @JoinColumn(name = "configuration_id")
     )
-    private Set<Component> configuredComponents = Collections.emptySet();
-    @ManyToOne
-    private Motherboard motherboard;
+    private Set<Article> configuredComponents = Collections.emptySet();
 
     public long getId() {
         return id;
@@ -40,19 +41,12 @@ public class Configuration {
         this.creator = creator;
     }
 
-    public Set<Component> getConfiguredComponents() {
+
+    public Set<Article> getConfiguredComponents() {
         return configuredComponents;
     }
 
-    public void setConfiguredComponents(Set<Component> configuredComponents) {
+    public void setConfiguredComponents(Set<Article> configuredComponents) {
         this.configuredComponents = configuredComponents;
-    }
-
-    public Motherboard getMotherboard() {
-        return motherboard;
-    }
-
-    public void setMotherboard(Motherboard motherboard) {
-        this.motherboard = motherboard;
     }
 }

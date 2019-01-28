@@ -1,7 +1,6 @@
 package org.pcConfigurator.converter;
 
 import org.pcConfigurator.beans.ArticleTeaserBean;
-import org.pcConfigurator.beans.ConfiguratorBean;
 import org.pcConfigurator.entities.Article;
 import org.pcConfigurator.entities.Configuration;
 import org.pcConfigurator.entities.PriceRow;

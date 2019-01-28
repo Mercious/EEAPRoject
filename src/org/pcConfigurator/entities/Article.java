@@ -1,7 +1,10 @@
 package org.pcConfigurator.entities;
 
 import javax.persistence.*;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 
 @Entity
@@ -12,7 +15,7 @@ public class Article {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private long articleID;
-    // immutable business key
+    // business key
     @Column(unique = true)
     private String articleName;
     // Frontend-Display Name
@@ -24,6 +27,10 @@ public class Article {
 
     @Enumerated(EnumType.STRING)
     private ComponentType type;
+
+    // Welche Slots dieser Artikel benötigt (Komponente) oder bereitstellt (Motherboard)
+    @OneToMany (cascade = CascadeType.ALL)
+    private Set<SlotRestriction> slotRestrictions = Collections.emptySet();
 
     public Article(final String articleName) {
         this.articleName = articleName;
@@ -65,5 +72,21 @@ public class Article {
 
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
+    }
+
+    public Set<SlotRestriction> getSlotRestrictions() {
+        return slotRestrictions;
+    }
+
+    public void setSlotRestrictions(Set<SlotRestriction> slotRestrictions) {
+        this.slotRestrictions = slotRestrictions;
+    }
+
+    public HashMap<SlotType, Integer> getSlotRestrictionsOfType(final SlotRestrictionType type) {
+        HashMap<SlotType, Integer> slotRelationOfType = new HashMap<>();
+        this.slotRestrictions.stream().filter(slotRestriction -> type.equals(slotRestriction.getType()))
+                .forEach(slotRestriction -> slotRelationOfType.merge(slotRestriction.getRelatedSlotType()
+                        , slotRestriction.getQuantity(), (a, b) -> a + b));
+        return slotRelationOfType;
     }
 }
