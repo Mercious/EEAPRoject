@@ -11,6 +11,7 @@ import java.util.Set;
 @Entity
 public class Configuration {
     @Id
+    @GeneratedValue
     private long id;
     // Wer hat diese Konfiguration erstellt, also wem gehört sie?
     @ManyToOne
@@ -20,7 +21,7 @@ public class Configuration {
     // Welches ich auch nicht wirklich besser fände
     @ManyToMany
     @JoinTable(name = "configuration_component",
-            joinColumns = @JoinColumn(name = "component_id"),
+            joinColumns = @JoinColumn(name = "article_id"),
             inverseJoinColumns = @JoinColumn(name = "configuration_id")
     )
     private Set<Article> configuredComponents = Collections.emptySet();

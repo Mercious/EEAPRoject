@@ -3,11 +3,9 @@ package org.pcConfigurator.beans;
 
 import org.pcConfigurator.entities.Article;
 import org.pcConfigurator.entities.SlotType;
+import org.pcConfigurator.entities.User;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Repräsentiert die aktuelle Konfiguration eines Nutzers - also nicht persistiert. Wir verwenden hier eine etwas andere
@@ -18,29 +16,26 @@ import java.util.Set;
  */
 public class ConfigurationBean {
 
-    private HashMap<Article, Integer> configuredComponents = new HashMap<>();
+    private long configurationId;
+    private UserBean creator;
+    List<Article> configuredComponents = new ArrayList<>();
     private HashMap<SlotType, Integer> totalRequiredSots = new HashMap<>();
     private HashMap<SlotType, Integer> totalProvidedSlots = new HashMap<>();
 
-    public HashMap<Article, Integer> getConfiguredComponents() {
+    public List<Article> getConfiguredComponents() {
         return configuredComponents;
     }
 
-    public void setConfiguredComponents(final HashMap<Article, Integer> configuredComponents) {
+    public void setConfiguredComponents(final List<Article> configuredComponents) {
         this.configuredComponents = configuredComponents;
     }
 
-    public void addComponent(final Article component, final Integer amount) {
-        this.configuredComponents.merge(component, amount, (a, b) -> a + b);
+    public void addComponent(final Article component) {
+        this.configuredComponents.add(component);
     }
 
-    public void removeComponent(final Article component, final Integer amount) {
-        if (this.configuredComponents.get(component) == null)
-            return;
-        if (this.configuredComponents.get(component) <= amount)
-            this.configuredComponents.remove(component);
-        else
-            this.configuredComponents.merge(component, amount, (a,b) -> a - b);
+    public void removeComponent(final Article component) {
+        this.configuredComponents.remove(component);
     }
 
     public HashMap<SlotType, Integer> getTotalProvidedSlots() {
@@ -99,5 +94,34 @@ public class ConfigurationBean {
 
     public void setTotalRequiredSots(final HashMap<SlotType, Integer> requiredSots) {
         this.totalRequiredSots = requiredSots;
+    }
+
+    public long getConfigurationId() {
+        return configurationId;
+    }
+
+    public void setConfigurationId(long configurationId) {
+        this.configurationId = configurationId;
+    }
+
+    public UserBean getCreator() {
+        return creator;
+    }
+
+    public void setCreator(UserBean creator) {
+        this.creator = creator;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ConfigurationBean that = (ConfigurationBean) o;
+        return configurationId == that.configurationId;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(configurationId);
     }
 }

@@ -1,11 +1,13 @@
 package org.pcConfigurator.managed;
 
+import org.pcConfigurator.annotations.CurrentUser;
 import org.pcConfigurator.beans.UserBean;
 import org.pcConfigurator.entities.User;
 import org.pcConfigurator.services.UserService;
 import org.pcConfigurator.util.FacesMessageUtil;
 
 import javax.enterprise.context.SessionScoped;
+import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.validation.constraints.NotNull;
@@ -67,6 +69,8 @@ public class LoginUserManager implements Serializable {
         this.currentUser = currentUser;
     }
 
+    @Produces
+    @CurrentUser
     public UserBean getCurrentUser() {
         return currentUser;
     }

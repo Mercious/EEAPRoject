@@ -7,23 +7,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c12d384a-eec5-4d6f-b5e7-b354fdf03bdf" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/org/pcConfigurator/beans/ConfigurationBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/pcConfigurator/entities/SlotRestriction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/pcConfigurator/entities/SlotRestrictionType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/pcConfigurator/strategies/AbstractCompatbilityStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/pcConfigurator/annotations/CurrentUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/pcConfigurator/converter/ConfigurationBeanConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/pcConfigurator/converter/ConfigurationToConfigurationBeanConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/pcConfigurator/managed/SearchManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/pcConfigurator/repositories/ConfigurationRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/pcConfigurator/repositories/DefaultConfigurationRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/pcConfigurator/services/ConfigurationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/pcConfigurator/services/DefaultConfigurationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/pcConfigurator/ws/CustomerDataWebservice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/configurator.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/plus_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/resources/emcomp/configSlot.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/resources/js/fixViewStateBug.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/searchPage.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/pcConfigurator/beans/ConfiguratorBean.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/pcConfigurator/beans/ConfigurationBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/pcConfigurator/beans/ConfigurationBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/pcConfigurator/controller/HelloWorldController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/pcConfigurator/controller/HelloWorldController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/pcConfigurator/converter/ArticleToArticleTeaserBeanConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/pcConfigurator/converter/ArticleToArticleTeaserBeanConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/pcConfigurator/converter/ConfigurationToConfiguratorBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/pcConfigurator/converter/ConfigurationToConfiguratorBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/pcConfigurator/converter/RegisterDataToUserConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/pcConfigurator/converter/RegisterDataToUserConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/pcConfigurator/entities/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/pcConfigurator/entities/Article.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/pcConfigurator/entities/Component.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/pcConfigurator/entities/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/pcConfigurator/entities/Configuration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/pcConfigurator/entities/Motherboard.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/pcConfigurator/entities/SlotType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/pcConfigurator/entities/SlotType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/pcConfigurator/entities/SlotRestriction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/pcConfigurator/entities/SlotRestriction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/pcConfigurator/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/pcConfigurator/entities/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/pcConfigurator/managed/ConfigurationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/pcConfigurator/managed/ConfigurationManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/pcConfigurator/strategies/CompatibilityStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/pcConfigurator/strategies/CompatibilityStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/pcConfigurator/managed/LoginUserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/pcConfigurator/managed/LoginUserManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/pcConfigurator/repositories/ArticleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/pcConfigurator/repositories/ArticleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/pcConfigurator/repositories/DefaultArticleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/pcConfigurator/repositories/DefaultArticleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/pcConfigurator/repositories/DefaultUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/pcConfigurator/repositories/DefaultUserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/pcConfigurator/services/ArticleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/pcConfigurator/services/ArticleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/pcConfigurator/services/DefaultArticleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/pcConfigurator/services/DefaultArticleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/pcConfigurator/services/DefaultUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/pcConfigurator/services/DefaultUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/pcConfigurator/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/pcConfigurator/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/pcConfigurator/strategies/AbstractCompatbilityStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/pcConfigurator/strategies/AbstractCompatbilityStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/pcConfigurator/strategies/ComponentCompatibilityStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/pcConfigurator/strategies/ComponentCompatibilityStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/pcConfigurator/strategies/MotherboardCompatibilityStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/pcConfigurator/strategies/MotherboardCompatibilityStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/loginRegister.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/loginRegister.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/resources/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/resources/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/resources/emcomp/footer.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/resources/emcomp/footer.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/resources/emcomp/header.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/resources/emcomp/header.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/resources/js/shop.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/resources/js/shop.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -72,11 +95,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ComponentCompatibilityStrategy.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/strategies/ComponentCompatibilityStrategy.java">
+      <file leaf-file-name="ConfigurationManager.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/managed/ConfigurationManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="14" column="52" lean-forward="true" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
+            <state relative-caret-position="197">
+              <caret line="128" column="42" lean-forward="true" selection-start-line="128" selection-start-column="42" selection-end-line="128" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -84,25 +107,73 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MotherboardCompatibilityStrategy.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/strategies/MotherboardCompatibilityStrategy.java">
+      <file leaf-file-name="configSlot.xhtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/resources/emcomp/configSlot.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="62" lean-forward="true" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
+            <state relative-caret-position="313">
+              <caret line="42" column="18" lean-forward="true" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="searchPage.xhtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/searchPage.xhtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="302">
+              <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="configurator.xhtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/configurator.xhtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="218">
+              <caret line="51" column="34" lean-forward="true" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Configuration.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/entities/Configuration.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConfigurationToConfigurationBeanConverter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/converter/ConfigurationToConfigurationBeanConverter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4348#4349#0" expanded="true" />
-                <element signature="e#4413#4414#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AbstractCompatbilityStrategy.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/strategies/AbstractCompatbilityStrategy.java">
+      <file leaf-file-name="ArticleToArticleTeaserBeanConverter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/converter/ArticleToArticleTeaserBeanConverter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="86">
+              <caret line="37" column="33" lean-forward="true" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#894#895#0" expanded="true" />
+                <element signature="e#962#963#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConfigurationBeanConverter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/converter/ConfigurationBeanConverter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="382">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -113,90 +184,21 @@
       <file leaf-file-name="ConfigurationBean.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/beans/ConfigurationBean.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-210">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="262">
+              <caret line="123" column="27" lean-forward="true" selection-start-line="123" selection-start-column="27" selection-end-line="123" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#941#942#0" expanded="true" />
-                <element signature="e#984#985#0" expanded="true" />
-                <element signature="e#1731#1732#0" expanded="true" />
-                <element signature="e#1772#1773#0" expanded="true" />
-                <element signature="e#1243#1244#0" expanded="true" />
-                <element signature="e#1283#1284#0" expanded="true" />
+                <element signature="e#4407#4408#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginUserManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/managed/LoginUserManager.java">
+      <file leaf-file-name="shop.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/resources/js/shop.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1827#1828#0" expanded="true" />
-                <element signature="e#1861#1862#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SlotRestrictionType.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/entities/SlotRestrictionType.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SlotRestriction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/entities/SlotRestriction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="23" lean-forward="true" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-              <folding>
-                <element signature="e#676#677#0" expanded="true" />
-                <element signature="e#707#708#0" expanded="true" />
-                <element signature="e#752#753#0" expanded="true" />
-                <element signature="e#792#793#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ComponentType.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/entities/ComponentType.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Article.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/entities/Article.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="623">
-              <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
-              <folding>
-                <element signature="e#1832#1833#0" expanded="true" />
-                <element signature="e#1888#1889#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConfigurationManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/managed/ConfigurationManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="35" column="56" lean-forward="true" selection-start-line="35" selection-start-column="56" selection-end-line="35" selection-end-column="56" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#803#804#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="262">
+              <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -206,28 +208,45 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
+        <option value="AnnotationType" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>&lt;br&gt;</find>
-      <find>createQu</find>
-      <find>persistence</find>
-      <find>setArticleName</find>
-      <find>hme</find>
-      <find>price</find>
-      <find>discounted</find>
-      <find>button</find>
-      <find>registerPitch</find>
-      <find>input</find>
-      <find>registerForm</find>
-      <find>[type</find>
-      <find>beginRegisterButton</find>
-      <find>import javax.faces.bean</find>
+      <find>Dummy CPU 16</find>
+      <find>euro</find>
+      <find>teaser</find>
+      <find>times</find>
+      <find>dummy</find>
+      <find>h:form</find>
+      <find>INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL</find>
+      <find>.jpg</find>
+      <find>h:outputscript</find>
+      <find>Senden</find>
+      <find>getCompatibleArticlesOfType</find>
+      <find>remoe</find>
+      <find>getComp</find>
+      <find>@Stateless</find>
+      <find>remove</find>
+      <find>= null</find>
+      <find>loadSavedC</find>
+      <find>User</find>
+      <find>saveConfiguratio</find>
+      <find>saveConfi</find>
+      <find>save</find>
+      <find>saveCon</find>
+      <find>removeArt</find>
+      <find>getArticleInSlo</find>
+      <find>load</find>
+      <find>setCurrentConfigu</find>
+      <find>getCompati</find>
+      <find>setCurrentConfiguration</find>
+      <find>savedConfigsSelect</find>
+      <find>setCurrentCon</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -236,57 +255,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/resources/emcomp/footer.xhtml" />
-        <option value="$PROJECT_DIR$/web/resources/emcomp/pageWithFooterHeader.xhtml" />
-        <option value="$PROJECT_DIR$/src/org/pcConfigurator/entities/PriceRow.java" />
-        <option value="$PROJECT_DIR$/src/META-INF/persistence.xml" />
-        <option value="$PROJECT_DIR$/src/org/pcConfigurator/entities/ComponentType.java" />
-        <option value="$PROJECT_DIR$/src/org/pcConfigurator/converter/Converter.java" />
-        <option value="$PROJECT_DIR$/src/org/pcConfigurator/beans/ArticleTeaserBean.java" />
-        <option value="$PROJECT_DIR$/web/index.xhtml" />
-        <option value="$PROJECT_DIR$/src/org/pcConfigurator/managed/Credentials.java" />
-        <option value="$PROJECT_DIR$/src/org/pcConfigurator/managed/CurrentUserManager.java" />
-        <option value="$PROJECT_DIR$/src/org/pcConfigurator/managed/LoginCredentials.java" />
-        <option value="$PROJECT_DIR$/web/resources/css/style.css" />
-        <option value="$PROJECT_DIR$/src/org/pcConfigurator/controller/HelloWorldController.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/faces-config.xml" />
-        <option value="$PROJECT_DIR$/web/loginRegister.xhtml" />
-        <option value="$PROJECT_DIR$/web/resources/js/shop.js" />
-        <option value="$PROJECT_DIR$/src/resources/customMessages.properties" />
-        <option value="$PROJECT_DIR$/src/org/pcConfigurator/entities/User.java" />
-        <option value="$PROJECT_DIR$/src/org/pcConfigurator/repositories/UserRepository.java" />
-        <option value="$PROJECT_DIR$/src/org/pcConfigurator/repositories/DefaultUserRepository.java" />
-        <option value="$PROJECT_DIR$/src/org/pcConfigurator/converter/RegisterDataToUserConverter.java" />
         <option value="$PROJECT_DIR$/src/org/pcConfigurator/managed/RegisterData.java" />
         <option value="$PROJECT_DIR$/src/org/pcConfigurator/util/FacesMessageUtil.java" />
         <option value="$PROJECT_DIR$/src/org/pcConfigurator/beans/UserBean.java" />
-        <option value="$PROJECT_DIR$/src/org/pcConfigurator/services/UserService.java" />
         <option value="$PROJECT_DIR$/src/org/pcConfigurator/managed/RegisterUserManager.java" />
-        <option value="$PROJECT_DIR$/src/org/pcConfigurator/managed/LoginUserManager.java" />
-        <option value="$PROJECT_DIR$/web/resources/emcomp/header.xhtml" />
-        <option value="$PROJECT_DIR$/src/org/pcConfigurator/services/DefaultUserService.java" />
         <option value="$PROJECT_DIR$/web/resources/emcomp/articleTeaser.xhtml" />
-        <option value="$PROJECT_DIR$/src/org/pcConfigurator/converter/ArticleToArticleTeaserBeanConverter.java" />
         <option value="$PROJECT_DIR$/src/org/pcConfigurator/entities/Motherboard.java" />
-        <option value="$PROJECT_DIR$/src/org/pcConfigurator/repositories/ArticleRepository.java" />
-        <option value="$PROJECT_DIR$/src/org/pcConfigurator/repositories/DefaultArticleRepository.java" />
-        <option value="$PROJECT_DIR$/src/org/pcConfigurator/services/ArticleService.java" />
-        <option value="$PROJECT_DIR$/src/org/pcConfigurator/services/DefaultArticleService.java" />
         <option value="$PROJECT_DIR$/src/org/pcConfigurator/converter/ConfigurationToConfiguratorBean.java" />
         <option value="$PROJECT_DIR$/src/org/pcConfigurator/entities/SlotRestrictionType.java" />
-        <option value="$PROJECT_DIR$/src/org/pcConfigurator/entities/Configuration.java" />
         <option value="$PROJECT_DIR$/src/org/pcConfigurator/entities/Component.java" />
         <option value="$PROJECT_DIR$/src/org/pcConfigurator/entities/SlotType.java" />
-        <option value="$PROJECT_DIR$/src/org/pcConfigurator/strategies/AbstractCompatbilityStrategy.java" />
         <option value="$PROJECT_DIR$/src/org/pcConfigurator/beans/ConfiguratorBean.java" />
         <option value="$PROJECT_DIR$/src/org/pcConfigurator/strategies/CompatibilityStrategy.java" />
-        <option value="$PROJECT_DIR$/src/org/pcConfigurator/strategies/ComponentCompatibilityStrategy.java" />
-        <option value="$PROJECT_DIR$/src/org/pcConfigurator/managed/ConfigurationManager.java" />
-        <option value="$PROJECT_DIR$/src/org/pcConfigurator/entities/SlotRestriction.java" />
-        <option value="$PROJECT_DIR$/src/org/pcConfigurator/beans/ConfigurationBean.java" />
-        <option value="$PROJECT_DIR$/src/org/pcConfigurator/entities/Article.java" />
+        <option value="$PROJECT_DIR$/src/org/pcConfigurator/strategies/AbstractCompatbilityStrategy.java" />
         <option value="$PROJECT_DIR$/src/org/pcConfigurator/strategies/MotherboardCompatibilityStrategy.java" />
+        <option value="$PROJECT_DIR$/src/org/pcConfigurator/strategies/ComponentCompatibilityStrategy.java" />
+        <option value="$PROJECT_DIR$/src/org/pcConfigurator/entities/Configuration.java" />
+        <option value="$PROJECT_DIR$/src/org/pcConfigurator/entities/User.java" />
+        <option value="$PROJECT_DIR$/src/org/pcConfigurator/converter/ArticleToArticleTeaserBeanConverter.java" />
+        <option value="$PROJECT_DIR$/web/resources/emcomp/header.xhtml" />
+        <option value="$PROJECT_DIR$/web/resources/css/style.css" />
+        <option value="$PROJECT_DIR$/web/resources/emcomp/footer.xhtml" />
+        <option value="$PROJECT_DIR$/web/resources/js/fixViewStateBug.js" />
+        <option value="$PROJECT_DIR$/web/resources/emcomp/configSlot.xhtml" />
+        <option value="$PROJECT_DIR$/src/org/pcConfigurator/entities/SlotRestriction.java" />
+        <option value="$PROJECT_DIR$/src/org/pcConfigurator/controller/HelloWorldController.java" />
+        <option value="$PROJECT_DIR$/web/index.xhtml" />
+        <option value="$PROJECT_DIR$/src/org/pcConfigurator/services/ArticleService.java" />
+        <option value="$PROJECT_DIR$/src/org/pcConfigurator/repositories/ArticleRepository.java" />
+        <option value="$PROJECT_DIR$/src/org/pcConfigurator/services/DefaultArticleService.java" />
+        <option value="$PROJECT_DIR$/src/org/pcConfigurator/managed/SearchManager.java" />
+        <option value="$PROJECT_DIR$/web/searchPage.xhtml" />
+        <option value="$PROJECT_DIR$/src/org/pcConfigurator/ws/CustomerDataWebservice.java" />
+        <option value="$PROJECT_DIR$/src/org/pcConfigurator/annotations/CurrentUser.java" />
+        <option value="$PROJECT_DIR$/src/org/pcConfigurator/managed/LoginUserManager.java" />
+        <option value="$PROJECT_DIR$/src/org/pcConfigurator/repositories/ConfigurationRepository.java" />
+        <option value="$PROJECT_DIR$/src/org/pcConfigurator/converter/ConfigurationBeanConverter.java" />
+        <option value="$PROJECT_DIR$/src/org/pcConfigurator/entities/Article.java" />
+        <option value="$PROJECT_DIR$/src/org/pcConfigurator/converter/RegisterDataToUserConverter.java" />
+        <option value="$PROJECT_DIR$/web/loginRegister.xhtml" />
+        <option value="$PROJECT_DIR$/src/org/pcConfigurator/services/UserService.java" />
+        <option value="$PROJECT_DIR$/src/org/pcConfigurator/services/DefaultUserService.java" />
+        <option value="$PROJECT_DIR$/src/org/pcConfigurator/repositories/DefaultUserRepository.java" />
+        <option value="$PROJECT_DIR$/src/org/pcConfigurator/services/ConfigurationService.java" />
+        <option value="$PROJECT_DIR$/src/org/pcConfigurator/managed/ConfigurationManager.java" />
+        <option value="$PROJECT_DIR$/src/org/pcConfigurator/services/DefaultConfigurationService.java" />
+        <option value="$PROJECT_DIR$/src/org/pcConfigurator/repositories/DefaultConfigurationRepository.java" />
+        <option value="$PROJECT_DIR$/src/org/pcConfigurator/repositories/DefaultArticleRepository.java" />
+        <option value="$PROJECT_DIR$/src/org/pcConfigurator/converter/ConfigurationToConfigurationBeanConverter.java" />
+        <option value="$PROJECT_DIR$/web/configurator.xhtml" />
+        <option value="$PROJECT_DIR$/web/resources/js/shop.js" />
+        <option value="$PROJECT_DIR$/src/org/pcConfigurator/beans/ConfigurationBean.java" />
       </list>
     </option>
   </component>
@@ -332,6 +351,24 @@
             <path>
               <item name="EEA_Project" type="b2602c69:ProjectViewProjectNode" />
               <item name="EEA_Project" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EEA_Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EEA_Project" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EEA_Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EEA_Project" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+              <item name="shop" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EEA_Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EEA_Project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -346,6 +383,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="org" type="462c0819:PsiDirectoryNode" />
               <item name="pcConfigurator" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EEA_Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EEA_Project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+              <item name="pcConfigurator" type="462c0819:PsiDirectoryNode" />
+              <item name="annotations" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="EEA_Project" type="b2602c69:ProjectViewProjectNode" />
@@ -354,14 +399,6 @@
               <item name="org" type="462c0819:PsiDirectoryNode" />
               <item name="pcConfigurator" type="462c0819:PsiDirectoryNode" />
               <item name="beans" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EEA_Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EEA_Project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="pcConfigurator" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="EEA_Project" type="b2602c69:ProjectViewProjectNode" />
@@ -409,15 +446,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="org" type="462c0819:PsiDirectoryNode" />
               <item name="pcConfigurator" type="462c0819:PsiDirectoryNode" />
-              <item name="strategies" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EEA_Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EEA_Project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="pcConfigurator" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="ws" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="EEA_Project" type="b2602c69:ProjectViewProjectNode" />
@@ -435,6 +464,13 @@
               <item name="EEA_Project" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EEA_Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EEA_Project" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="EEA_Project" type="b2602c69:ProjectViewProjectNode" />
@@ -471,16 +507,17 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="org.pcConfigurator.services" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Felix\Desktop\EEA_Project\web" />
-      <recent name="C:\Users\Felix\Desktop\EEA_Project\src\org\pcConfigurator\strategies" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Felix\Desktop\EEA_Project\src\resources" />
       <recent name="C:\Users\Felix\Desktop\EEA_Project\web\resources" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Felix\Desktop\EEA_Project\web" />
+      <recent name="C:\Users\Felix\Desktop\EEA_Project\web\resources\emcomp" />
+      <recent name="C:\Users\Felix\Desktop\EEA_Project\src\org\pcConfigurator\strategies" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.pcConfigurator.services" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -621,12 +658,12 @@
       <workItem from="1540810670542" duration="8722000" />
       <workItem from="1544442154388" duration="19972000" />
       <workItem from="1545044045557" duration="75859000" />
-      <workItem from="1548513407465" duration="29742000" />
+      <workItem from="1548513407465" duration="88961000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134295000" />
+    <option name="totallyTimeSpent" value="193514000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -645,7 +682,7 @@
       <window_info anchor="right" id="JSF" order="3" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3855932" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.3898305" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32909605" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
@@ -680,29 +717,59 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/org/pcConfigurator/managed/RegisterUserManager.java</url>
           <line>28</line>
           <properties />
           <option name="timeStamp" value="27" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/org/pcConfigurator/services/DefaultUserService.java</url>
-          <line>22</line>
+          <line>23</line>
           <properties />
           <option name="timeStamp" value="28" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/org/pcConfigurator/repositories/DefaultUserRepository.java</url>
-          <line>31</line>
+          <line>34</line>
           <properties />
           <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/org/pcConfigurator/repositories/DefaultArticleRepository.java</url>
+          <line>43</line>
+          <properties />
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/org/pcConfigurator/managed/LoginUserManager.java</url>
+          <line>49</line>
+          <properties />
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/org/pcConfigurator/converter/ConfigurationBeanConverter.java</url>
+          <line>23</line>
+          <properties />
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/org/pcConfigurator/managed/ConfigurationManager.java</url>
+          <line>129</line>
+          <properties />
+          <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/org/pcConfigurator/managed/ConfigurationManager.java</url>
+          <line>73</line>
+          <properties />
+          <option name="timeStamp" value="66" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="30" />
+      <option name="time" value="67" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
@@ -715,225 +782,143 @@
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>this.entityManager.persist(user);</expression-string>
+        <expression-string>currentConfiguration.getConfigurationId()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>user</expression-string>
+        <expression-string>currentConfiguration.getConfiguredComponents()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>this.userRepository.findByUserName(registerData.getUserName())</expression-string>
+        <expression-string>this.configurationService.getConfigurationBeanForId(Long.valueOf(submittedValue))</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>loginUserManager</expression-string>
+        <expression-string>currentConfiguration</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>registerData</expression-string>
+        <expression-string>this.savedConfigurations</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>password</expression-string>
+        <expression-string>this.entityManager.persist(configuration)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>userName</expression-string>
+        <expression-string>this.getCurrentUser()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>CDI.current().getBeanManager().getBeans(&quot;loginCredentials&quot;)</expression-string>
+        <expression-string>query.getResultList()</expression-string>
         <language-id>JAVA</language-id>
-        <custom-info>javax.enterprise.inject.spi.CDI</custom-info>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>CDI.current().getBeanManager()</expression-string>
+        <expression-string>this.articleRepository.findByComponentType(componentType)</expression-string>
         <language-id>JAVA</language-id>
-        <custom-info>javax.enterprise.inject.spi.CDI</custom-info>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/out/artifacts/shop/resources/emcomp/footer.xhtml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/resources/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="259" column="15" lean-forward="true" selection-start-line="259" selection-start-column="15" selection-end-line="259" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/loginRegister.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="73" column="40" lean-forward="true" selection-start-line="73" selection-start-column="40" selection-end-line="73" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="31" column="4" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/jre/lib/resources.jar!/com/sun/org/apache/xerces/internal/impl/xpath/regex/message_sv.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-357" />
-      </provider>
-      <provider editor-type-id="ResourceBundle" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/resources/js/shop.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="23" column="9" lean-forward="true" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/artifacts/shop/resources/js/shop.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="11" column="28" lean-forward="true" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/faces-config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="15" lean-forward="true" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
-        </state>
-      </provider>
-      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/customMessages.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="31" lean-forward="true" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../EEA_Projekt/glassfish4/glassfish/modules/org.eclipse.persistence.jpa.jar!/org/eclipse/persistence/internal/jpa/EntityManagerImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="359" column="32" selection-start-line="359" selection-start-column="32" selection-end-line="359" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../EEA_Projekt/glassfish4/glassfish/modules/javax.persistence.jar!/javax/persistence/EntityManager.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="16" column="15" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/repositories/UserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/services/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/dummy_picture.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/converter/ConfigurationToConfiguratorBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/artifacts/shop/resources/emcomp/configSlot.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/resources/emcomp/articleTeaser.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" column="19" lean-forward="true" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/managed/RegisterData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="41" column="12" lean-forward="true" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1517#1518#0" expanded="true" />
-            <element signature="e#1549#1550#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../EEA_Projekt/glassfish4/glassfish/modules/ejb-container.jar!/org/glassfish/ejb/security/application/EJBSecurityManager.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="719" selection-start-line="719" selection-end-line="719" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/managed/RegisterUserManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/services/DefaultUserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="117">
+          <caret line="20" column="50" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/resources/emcomp/header.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+        <state relative-caret-position="578">
+          <caret line="37" column="7" lean-forward="true" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/controller/HelloWorldController.java">
+    <entry file="file://$PROJECT_DIR$/out/artifacts/shop/configurator.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="27" column="60" selection-start-line="27" selection-start-column="60" selection-end-line="27" selection-end-column="60" />
+        <state relative-caret-position="-569" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/resources/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="351" column="1" selection-start-line="351" selection-start-column="1" selection-end-line="351" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/resources/emcomp/pageWithFooterHeader.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-209" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/resources/js/fixViewStateBug.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/strategies/ComponentCompatibilityStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/entities/SlotRestriction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="28" column="39" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
+          <folding>
+            <element signature="e#606#607#0" expanded="true" />
+            <element signature="e#676#677#0" expanded="true" />
+            <element signature="e#762#763#0" expanded="true" />
+            <element signature="e#781#782#0" expanded="true" />
+            <element signature="e#1207#1208#0" expanded="true" />
+            <element signature="e#1232#1233#0" expanded="true" />
+            <element signature="e#1266#1267#0" expanded="true" />
+            <element signature="e#1294#1295#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/beans/ArticleTeaserBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="136">
+          <caret line="8" column="37" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="37" />
           <folding>
             <element signature="e#295#296#0" expanded="true" />
             <element signature="e#327#328#0" expanded="true" />
@@ -959,75 +944,180 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/beans/UserBean.java">
+    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/controller/HelloWorldController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+        <state relative-caret-position="165">
+          <caret line="28" column="10" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/converter/RegisterDataToUserConverter.java">
+    <entry file="file://$PROJECT_DIR$/web/index.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="27" column="74" lean-forward="true" selection-start-line="25" selection-start-column="20" selection-end-line="27" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/strategies/MotherboardCompatibilityStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/managed/SearchManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="18" column="42" lean-forward="true" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#509#510#0" expanded="true" />
+            <element signature="e#542#543#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/ws/CustomerDataWebservice.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="13" column="49" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
+          <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/util/FacesMessageUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/entities/Motherboard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/repositories/DefaultUserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#713#714#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/repositories/ArticleRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="79" selection-start-line="12" selection-start-column="79" selection-end-line="12" selection-end-column="79" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/repositories/DefaultArticleRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#303#304#0" expanded="true" />
+            <element signature="e#328#329#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/services/ArticleService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="243">
+          <caret line="22" column="81" selection-start-line="22" selection-start-column="81" selection-end-line="22" selection-end-column="81" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/repositories/ArticleRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="70" selection-start-line="13" selection-start-column="70" selection-end-line="13" selection-end-column="70" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/resources/emcomp/footer.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="9" lean-forward="true" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/entities/Article.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3792#3793#0" expanded="true" />
+            <element signature="e#3840#3841#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/loginRegister.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="36" column="54" lean-forward="true" selection-start-line="36" selection-start-column="54" selection-end-line="36" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/managed/RegisterUserManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="32" column="35" lean-forward="true" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/converter/RegisterDataToUserConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="24" column="20" lean-forward="true" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/annotations/CurrentUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../EEA_Projekt/glassfish4/glassfish/modules/weld-osgi-bundle.jar!/org/jboss/weld/el/WeldMethodExpression.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/services/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/repositories/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/managed/LoginUserManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/managed/RegisterData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="38" column="12" lean-forward="true" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1517#1518#0" expanded="true" />
+            <element signature="e#1549#1550#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/services/ConfigurationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="82" selection-start-line="10" selection-start-column="82" selection-end-line="10" selection-end-column="82" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1036,209 +1126,182 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/services/DefaultArticleService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="21" column="74" selection-start-line="21" selection-start-column="74" selection-end-line="21" selection-end-column="74" />
+        <state relative-caret-position="357">
+          <caret line="24" column="39" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#createDummyData#0;class#DefaultArticleService#0" />
-            <element signature="method#createDummyPrices#0;class#DefaultArticleService#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/entities/Component.java">
+    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/services/DefaultUserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        <state relative-caret-position="306">
+          <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/entities/User.java">
+    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/repositories/DefaultUserRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="30" lean-forward="true" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+        <state relative-caret-position="391">
+          <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2051#2052#0" expanded="true" />
-            <element signature="e#2082#2083#0" expanded="true" />
-            <element signature="e#2130#2131#0" expanded="true" />
-            <element signature="e#2170#2171#0" expanded="true" />
+            <element signature="e#901#902#0" expanded="true" />
+            <element signature="e#949#950#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/entities/PriceRow.java">
+    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/repositories/ConfigurationRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="18" column="28" lean-forward="true" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+        <state relative-caret-position="153">
+          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/repositories/DefaultArticleRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="655">
+          <caret line="48" column="48" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#680#681#0" expanded="true" />
+            <element signature="e#751#752#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/repositories/DefaultConfigurationRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#932#933#0" expanded="true" />
+            <element signature="e#992#993#0" expanded="true" />
+            <element signature="e#1063#1064#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/services/DefaultConfigurationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="29" column="90" lean-forward="true" selection-start-line="29" selection-start-column="90" selection-end-line="29" selection-end-column="90" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/beans/UserBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/converter/ConfigurationToConfigurationBeanConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/entities/Configuration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1210#1211#0" expanded="true" />
-            <element signature="e#1253#1254#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/converter/ConfigurationToConfiguratorBean.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/converter/ArticleToArticleTeaserBeanConverter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="98" selection-start-line="32" selection-start-column="98" selection-end-line="32" selection-end-column="98" />
+        <state relative-caret-position="86">
+          <caret line="37" column="33" lean-forward="true" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#894#895#0" expanded="true" />
+            <element signature="e#962#963#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/strategies/CompatibilityStrategy.java">
+    <entry file="file://$PROJECT_DIR$/web/searchPage.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="302">
+          <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../EEA_Projekt/glassfish4/glassfish/modules/web-core.jar!/org/apache/catalina/core/StandardWrapper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="956" selection-start-line="956" selection-end-line="956" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../EEA_Projekt/glassfish4/glassfish/modules/web-core.jar!/org/apache/catalina/core/StandardWrapperValve.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="87" column="96" selection-start-line="87" selection-start-column="96" selection-end-line="87" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/resources/emcomp/configSlot.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="42" column="18" lean-forward="true" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/configurator.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="51" column="34" lean-forward="true" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/resources/js/shop.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/converter/ConfigurationBeanConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/entities/SlotType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/entities/SlotRestrictionType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/strategies/AbstractCompatbilityStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/entities/ComponentType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/util/HashMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="1060" column="13" selection-start-line="1060" selection-start-column="13" selection-end-line="1060" selection-end-column="13" />
-          <folding>
-            <element signature="e#42126#42127#0" expanded="true" />
-            <element signature="e#42190#42191#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/beans/ConfigurationBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-210">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="262">
+          <caret line="123" column="27" lean-forward="true" selection-start-line="123" selection-start-column="27" selection-end-line="123" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#941#942#0" expanded="true" />
-            <element signature="e#984#985#0" expanded="true" />
-            <element signature="e#1731#1732#0" expanded="true" />
-            <element signature="e#1772#1773#0" expanded="true" />
-            <element signature="e#1243#1244#0" expanded="true" />
-            <element signature="e#1283#1284#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/managed/LoginUserManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1827#1828#0" expanded="true" />
-            <element signature="e#1861#1862#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/entities/SlotRestriction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="23" lean-forward="true" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-          <folding>
-            <element signature="e#676#677#0" expanded="true" />
-            <element signature="e#707#708#0" expanded="true" />
-            <element signature="e#752#753#0" expanded="true" />
-            <element signature="e#792#793#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/entities/Article.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="623">
-          <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
-          <folding>
-            <element signature="e#1832#1833#0" expanded="true" />
-            <element signature="e#1888#1889#0" expanded="true" />
+            <element signature="e#4407#4408#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/managed/ConfigurationManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="35" column="56" lean-forward="true" selection-start-line="35" selection-start-column="56" selection-end-line="35" selection-end-column="56" />
+        <state relative-caret-position="197">
+          <caret line="128" column="42" lean-forward="true" selection-start-line="128" selection-start-column="42" selection-end-line="128" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#803#804#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/strategies/ComponentCompatibilityStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="14" column="52" lean-forward="true" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/pcConfigurator/strategies/MotherboardCompatibilityStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="62" lean-forward="true" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4348#4349#0" expanded="true" />
-            <element signature="e#4413#4414#0" expanded="true" />
           </folding>
         </state>
       </provider>

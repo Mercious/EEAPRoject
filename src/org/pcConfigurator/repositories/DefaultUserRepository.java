@@ -4,6 +4,7 @@ import org.pcConfigurator.entities.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 import java.io.Serializable;
 import java.util.Set;
 
@@ -24,7 +25,9 @@ public class DefaultUserRepository implements UserRepository, Serializable {
 
     @Override
     public User findByUserName(String userName) {
-        return null;
+        TypedQuery<User> query = this.entityManager.createQuery("select u from User u where u.userName = :userName", User.class);
+        query.setParameter("userName", userName);
+        return query.getSingleResult();
     }
 
     @Override

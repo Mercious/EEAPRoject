@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:body>
+    <composite:interface>
+        <composite:attribute name="slotID" required="true" type="java.lang.String"/>
+        <composite:attribute name="slotHeadline" required="true" type="java.lang.String"/>
+        <composite:attribute name="type" required="true" type="java.lang.String"/>
+        <composite:attribute name="slotContent" required="true" type="org.pcConfigurator.beans.ArticleTeaserBean"/>
+
+    </composite:interface>
+
+    <composite:implementation>
+        <h:form>
+            <div class="configSlot white" id="${slotID}" data-type="${type}">
+                <div class="configHeadline">${cc.attrs.slotHeadline}</div>
+                <c:choose>
+                    <c:when test="${empty cc.attrs.slotContent}">
+                        <div id="addItemArea${type}">
+                            <h:commandButton
+                                    id="addIcon${type}"
+                                    action="#{configurationManager.getCompatibleArticlesOfType(cc.attrs.type)}"
+                                    value="Artikel hinzufügen">
+                                    <f:ajax render=":articleListModal" />
+                            </h:commandButton>
+                        </div>
+                    </c:when>
+                    <c:otherwise>
+                        <h:form>
+                        <div id="itemDetailsArea${type}">
+                            <img src="dummy_picture.jpg" class="centeredImage"/>
+                            <div class="teaserName">${cc.attrs.slotContent.articleDisplayName}</div>
+                            <div class="priceLabel right">&#8364; ${cc.attrs.slotContent.price}</div>
+                            <h:commandButton value="Löschen"
+                                             action="#{configurationManager.removeArticleFromConfiguration(cc.attrs.slotContent)}"/>
+                        </div>
+                        </h:form>
+                    </c:otherwise>
+                </c:choose>
+            </div>
+        </h:form>
+    </composite:implementation>
+</h:body>
+</html>

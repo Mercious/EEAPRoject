@@ -11,5 +11,6 @@ public interface  ArticleRepository {
     public Set<Article> findByArticleName(final String articleName);
     public Set<Article> findAllDiscountedArticles();
     public Set<Article> findByComponentType(final ComponentType componentType);
+    public Set<Article> searchByArticleName(final String articleName);
 
 }

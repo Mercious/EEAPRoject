@@ -11,6 +11,7 @@ public class RegisterDataToUserConverter implements Serializable {
 
     public User convert(final RegisterData source) {
         User user = new User();
+        user.setUserName(source.getUserName());
         user.setFirstName(source.getFirstName());
         user.setLastName(source.getLastName());
         user.seteMail(source.getEmail());

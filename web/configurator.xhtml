@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:em="http://java.sun.com/jsf/composite/emcomp" xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+<ui:composition template="resources/emcomp/pageWithFooterHeader.xhtml">
+    <ui:param name="pageTitle" value="pcConfigurator Konfiguration"/>
+    <ui:define name="content">
+        <h:panelGroup class="container" id="configurationArea" layout="block">
+            <div class="headline">Ihre aktuelle Konfiguration</div>
+
+            <em:configSlot slotID="mainboard" slotHeadline="Mainboard" type="MB"
+                           slotContent="#{configurationManager.getArticleInSlot('MB')}"/>
+
+            <em:configSlot slotID="cpu" slotHeadline="CPU (Prozessor)" type="CPU"
+                           slotContent="#{configurationManager.getArticleInSlot('CPU')}"/>
+
+            <em:configSlot slotID="gpu" slotHeadline="GPU (Grafikkarte)" type="GPU"
+                           slotContent="#{configurationManager.getArticleInSlot('GPU')}"/>
+
+            <em:configSlot slotID="ram" slotHeadline="RAM (Arbeitsspeicher)" type="RAM"
+                           slotContent="#{configurationManager.getArticleInSlot('RAM')}"/>
+
+            <em:configSlot slotID="hdd" slotHeadline="HDD (Festplatte)" type="HDD"
+                           slotContent="#{configurationManager.getArticleInSlot('HDD')}"/>
+
+            <em:configSlot slotID="psu" slotHeadline="PSU (Netzzeil)" type="PSU"
+                           slotContent="#{configurationManager.getArticleInSlot('PSU')}"/>
+
+            <em:configSlot slotID="periph" slotHeadline="Zubehör" type="PERIPHERAL"
+                           slotContent="#{configurationManager.getArticleInSlot('PERIPHERAL')}"/>
+
+            <div id="totalPrice" class="totalPrice">
+                <div class="priceLabel"> &#8364; #{configurationManager.totalPrice}</div>
+                <h:commandButton value="Konfiguration speichern"
+                                 rendered="#{not empty configurationManager.currentConfiguration.configuredComponents
+                                 and not empty loginUserManager.currentUser}"
+                                 action="#{configurationManager.saveConfiguration()}">
+                        <f:ajax render=":savedConfigsSelect"/>
+                </h:commandButton>
+            </div>
+
+            <h:panelGroup layout="block" id="savedConfigsSelect">
+               <h:form>
+                <h:selectOneMenu value="#{configurationManager.currentConfiguration}"
+                                 converter="#{configurationBeanConverter}" rendered="#{not empty configurationManager.savedConfigurations}">
+                    <f:selectItems value="#{configurationManager.savedConfigurations}" var="config"
+                                   itemValue="#{config}" itemLabel="#{config.configurationId}"/>
+                    <f:ajax update="savedConfigsSelect"/>
+                </h:selectOneMenu>
+               </h:form>
+            </h:panelGroup>
+
+        </h:panelGroup>
+
+        <h:panelGroup layout="block" id="articleListModal">
+            <h:panelGroup layout="block" rendered="#{not empty configurationManager.currentItemList}"
+                          styleClass="modal">
+                <h:panelGroup styleClass="modal-content" layout="block">
+                    <h:form id="submitArticleChoiceForm">
+                        <h:dataTable value="#{configurationManager.currentItemList}" var="item" cellpadding="5"
+                                     cellspacing="10">
+                            <h:column>
+                                <f:facet name="header">Artikel-Name</f:facet>
+                                <h:outputText value="#{item.articleDisplayName}"/>
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header">Preis</f:facet>
+                                <h:outputText value="&#8364;#{item.price}"/>
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header">Aktion</f:facet>
+                                <h:commandButton action="#{configurationManager.addArticleToConfiguration(item)}"
+                                                 value="Auswählen"/>
+                            </h:column>
+
+                        </h:dataTable>
+                    </h:form>
+                </h:panelGroup>
+            </h:panelGroup>
+        </h:panelGroup>
+
+    </ui:define>
+</ui:composition>
+</html>

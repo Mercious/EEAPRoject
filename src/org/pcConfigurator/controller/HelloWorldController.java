@@ -25,11 +25,14 @@ public class HelloWorldController {
     // pro request aufruft, -> siehe JSF deferred expression)
     @PostConstruct
     public void loadTeaserList() {
+        //this.articleService.createDummyData();
+        //this.articleService.createDummyPrices();
         this.articleTeaserList = articleService.getTeaserArticleList();
     }
 
 
     public Set<ArticleTeaserBean> getArticleTeaserList() {
+
         return this.articleTeaserList;
     }
 }

@@ -1,6 +1,7 @@
 package org.pcConfigurator.converter;
 
 import org.pcConfigurator.beans.ArticleTeaserBean;
+import org.pcConfigurator.beans.ConfigurationBean;
 import org.pcConfigurator.entities.Article;
 import org.pcConfigurator.entities.Configuration;
 import org.pcConfigurator.entities.PriceRow;
@@ -23,17 +24,25 @@ public class ArticleToArticleTeaserBeanConverter {
     private ConfigurationManager configurationManager;
 
     public ArticleTeaserBean convert(Article source) {
+        return convertConsideringCompatibility(source, true);
+    }
+
+    public ArticleTeaserBean convertConsideringCompatibility(Article source, boolean checkCompatibility) {
+        if (source == null)
+            return null;
         ArticleTeaserBean articleTeaserBean = new ArticleTeaserBean();
         articleTeaserBean.setArticleID(source.getArticleID());
         articleTeaserBean.setArticleName(source.getArticleName());
         articleTeaserBean.setArticleDisplayName(source.getDisplayName());
         articleTeaserBean.setCompStatus(true);
-        Configuration currentConfig = configurationManager.getCurrentConfiguration();
-        compatibilityStrategy.forEach(compatibilityStrategy -> {
-            if (compatibilityStrategy.isApplicable(source) && articleTeaserBean.getCompStatus()) {
-                articleTeaserBean.setCompStatus(compatibilityStrategy.isCompatibleToCurrentConfig(source, currentConfig));
-            }
-        });
+        if (checkCompatibility) {
+            ConfigurationBean currentConfig = configurationManager.getCurrentConfiguration();
+            compatibilityStrategy.forEach(compatibilityStrategy -> {
+                if (compatibilityStrategy.isApplicable(source) && articleTeaserBean.getCompStatus()) {
+                    articleTeaserBean.setCompStatus(compatibilityStrategy.isCompatibleToCurrentConfig(source, currentConfig));
+                }
+            });
+        }
         articleTeaserBean.setPrice(this.getLowestTodayValidPrice(source.getPriceRows(), false));
         articleTeaserBean.setDiscountedPrice(this.getLowestTodayValidPrice(source.getPriceRows(), true));
 

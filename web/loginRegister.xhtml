@@ -16,8 +16,8 @@
                 <h3>Ich bin bereits Kunde!</h3>
                 <div class="loginboxText greyText">Dann geben melden Sie sich bitte mit ihren Login-Daten hier an:</div>
                 <h:form id="loginForm">
-                    <h:outputLabel for="eMail">E-Mail Adresse:</h:outputLabel>
-                    <h:inputText id="eMail" name="eMail" required="true" value="#{loginUserManager.userName}"/>
+                    <h:outputLabel for="userNameRegister">User Name:</h:outputLabel>
+                    <h:inputText id="userNameRegister" name="userNameRegister" required="true" value="#{loginUserManager.userName}"/>
                     <h:outputLabel for="password">Passwort:</h:outputLabel>
                     <h:inputText id="password" name="password" type="password" required="true"
                                  value="#{loginUserManager.password}"/>
@@ -36,7 +36,7 @@
                         <li>Personalisierte Vorschläge nach Ihren Bedürfnissen</li>
                         <li>Und noch vieles mehr!</li>
                     </ul>
-                    <h:commandButton id="beginRegisterButton" value="Registrierung beginnen"></h:commandButton>
+                    <h:commandButton id="beginRegisterButton" value="Registrierung beginnen"/>
                 </div>
                 <h:form id="registerForm">
                     <p:panelGrid columns="3" cellspacing="10">

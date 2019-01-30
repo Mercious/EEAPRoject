@@ -350,7 +350,6 @@ header form {
 
 /*  Das modal design ist stark inspiriert von https://www.w3schools.com/howto/howto_css_modals.asp*/
 .modal {
-    display: none;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -482,4 +481,9 @@ header form {
 .strikethrough {
     text-decoration: line-through;
     font-size: 15px;
+}
+
+
+.addArticleImage {
+    background-image: url(/dummy_picture.jpg)
 }

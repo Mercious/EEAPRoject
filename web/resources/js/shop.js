@@ -9,6 +9,8 @@ function displayRegisterForm() {
     registerFormParent.style.width = "800px";
 }
 
+
+
 window.onload = function() {
 
 

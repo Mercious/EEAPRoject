@@ -3,15 +3,14 @@ package org.pcConfigurator.repositories;
 import org.pcConfigurator.entities.Article;
 import org.pcConfigurator.entities.ComponentType;
 
-import javax.enterprise.context.ApplicationScoped;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import java.util.HashSet;
 import java.util.Set;
 
-@ApplicationScoped
+@Stateless
 public class DefaultArticleRepository implements ArticleRepository {
     @PersistenceContext
     private EntityManager entityManager;
@@ -23,7 +22,7 @@ public class DefaultArticleRepository implements ArticleRepository {
 
     @Override
     public Article findOne(long articleID) {
-        return null;
+       return this.entityManager.find(Article.class, articleID);
     }
 
     @Override
@@ -42,6 +41,13 @@ public class DefaultArticleRepository implements ArticleRepository {
     public Set<Article> findByComponentType(ComponentType componentType) {
         TypedQuery<Article> query = entityManager.createQuery("select a from Article a where a.type = :componentType", Article.class);
         query.setParameter("componentType", componentType);
+        return new HashSet<>(query.getResultList());
+    }
+
+    @Override
+    public Set<Article> searchByArticleName(String articleName) {
+        TypedQuery<Article> query = entityManager.createQuery("select a from Article a where a.displayName LIKE :displayName", Article.class);
+        query.setParameter("displayName", articleName);
         return new HashSet<>(query.getResultList());
     }
 }

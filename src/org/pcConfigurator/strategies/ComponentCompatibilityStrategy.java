@@ -4,6 +4,7 @@ import org.pcConfigurator.beans.ConfigurationBean;
 import org.pcConfigurator.entities.*;
 
 import javax.ejb.Stateless;
+import java.util.HashMap;
 import java.util.Set;
 
 @Stateless
@@ -17,8 +18,11 @@ public class ComponentCompatibilityStrategy extends AbstractCompatbilityStrategy
 
         for (Article containedArticle : currentConfig.getConfiguredComponents()) {
             if (ComponentType.MB.equals(containedArticle.getType())) {
-                Set<SlotType> supportedSlots = getSlotTypesOfRestrictionTypeForArticle(containedArticle, SlotRestrictionType.PROVIDES);
-                return supportedSlots.containsAll(getSlotTypesOfRestrictionTypeForArticle(article, SlotRestrictionType.REQUIRES));
+               HashMap<SlotType, Integer> componentRequiredSlots = article.getSlotRestrictionsOfType(SlotRestrictionType.REQUIRES);
+               // We check that if we add this component, whether or not the totally provided slots are still enough
+                // after we added this components requirements
+               return compareSlotTypeMapForCoverage(mergeSlotTypeMaps(currentConfig.getTotalRequiredSots(),
+                       componentRequiredSlots), currentConfig.getTotalProvidedSlots());
             }
         }
         // kein Motherboard gefunden -> Artikel ist erstmal kompatibel, Entscheidung fällt dann beim Motherboard

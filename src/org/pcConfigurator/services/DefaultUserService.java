@@ -1,5 +1,6 @@
 package org.pcConfigurator.services;
 
+import org.pcConfigurator.beans.UserBean;
 import org.pcConfigurator.converter.RegisterDataToUserConverter;
 import org.pcConfigurator.entities.User;
 import org.pcConfigurator.managed.RegisterData;
@@ -38,5 +39,10 @@ public class DefaultUserService implements UserService, Serializable {
             return user;
         return null;
 
+    }
+
+    @Override
+    public User findUserForUserBean(UserBean userBean) {
+        return this.userRepository.findByUserName(userBean.getUserName());
     }
 }
