@@ -26,7 +26,7 @@ public class HelloWorldController {
     @PostConstruct
     public void loadTeaserList() {
         //this.articleService.createDummyData();
-        //this.articleService.createDummyPrices();
+        // this.articleService.createDummyPrices();
         this.articleTeaserList = articleService.getTeaserArticleList();
     }
 

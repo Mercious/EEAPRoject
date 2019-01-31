@@ -17,23 +17,39 @@
                 #{cc.attrs.articleBean.price}</div>
             <c:if test="#{not empty cc.attrs.articleBean.discountedPrice}">
                 <div class="discountedPriceLabel right">&#8364; #{cc.attrs.articleBean.discountedPrice}</div>
-            </c:if>
+            </c:if>st
             <c:if test="#{cc.attrs.articleBean.compStatus}">
                 <h:form>
                     <h:commandButton class="right" value="Hinzufügen"
                                      action="#{configurationManager.addArticleToConfiguration(cc.attrs.articleBean)}"/>
                 </h:form>
             </c:if>
-            <c:choose>
-                <c:when test="#{cc.attrs.articleBean.compStatus}">
-                    <img src="check_mark.png" class="icon left"
-                         alt="compatibility status icon for article #{cc.attrs.articleBean.articleID}"/>
-                </c:when>
-                <c:otherwise>
-                    <img src="warning_icon.png" class="iconWarning left"
-                         alt="compatibility status icon for article #{cc.attrs.articleBean.articleID}"/>
-                </c:otherwise>
-            </c:choose>
+
+            <c:if test="#{cc.attrs.articleBean.deliveryTime == 5}">
+                <img src="alert_delivery.png" class="iconWarning left"
+                     alt="delivery status icon for article #{cc.attrs.articleBean.articleID}"/>
+            </c:if>
+            <c:if test="#{cc.attrs.articleBean.deliveryTime == 4}">
+                <img src="alert_orange_delivery.png" class="iconWarning left"
+                     alt="delivery status icon for article #{cc.attrs.articleBean.articleID}"/>
+            </c:if>
+            <c:if test="#{cc.attrs.articleBean.deliveryTime == 3}">
+                <img src="orange_delivery.png" class="iconWarning left"
+                     alt="delivery status icon for article #{cc.attrs.articleBean.articleID}"/>
+            </c:if>
+            <c:if test="#{cc.attrs.articleBean.deliveryTime == 2}">
+                <img src="green_delivery.png" class="iconWarning left"
+                     alt="delivery status icon for article #{cc.attrs.articleBean.articleID}"/>
+            </c:if>
+            <c:if test="#{cc.attrs.articleBean.deliveryTime == 1}">
+                <img src="green_delivery.png" class="iconWarning left"
+                     alt="delivery status icon for article #{cc.attrs.articleBean.articleID}"/>
+            </c:if>
+            <c:if test="#{cc.attrs.articleBean.deliveryTime == 0}">
+                <img src="green_delivery.png" class="iconWarning left"
+                     alt="delivery status icon for article #{cc.attrs.articleBean.articleID}"/>
+            </c:if>
+
         </div>
     </composite:implementation>
 </h:body>

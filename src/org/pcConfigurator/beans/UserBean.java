@@ -11,7 +11,9 @@ public class UserBean implements Serializable {
     private String lastName;
     private String userName;
 
-    public UserBean() {}
+    public UserBean() {
+    }
+
     public UserBean(final String userName, final String firstName, final String lastName) {
         this.userName = userName;
         this.firstName = firstName;

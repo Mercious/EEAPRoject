@@ -1,14 +1,8 @@
 package org.pcConfigurator.strategies;
 
-import org.pcConfigurator.entities.Article;
-import org.pcConfigurator.entities.SlotRestriction;
-import org.pcConfigurator.entities.SlotRestrictionType;
 import org.pcConfigurator.entities.SlotType;
 
-import java.util.Comparator;
 import java.util.HashMap;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 public abstract class AbstractCompatbilityStrategy {
 
@@ -36,11 +30,10 @@ public abstract class AbstractCompatbilityStrategy {
             if (mergedMap.get(slotType) == null || mergedMap.get(slotType) <= slotTypeMap.get(slotType))
                 mergedMap.remove(slotType);
             else
-                mergedMap.merge(slotType, slotTypeMap.get(slotType), (a,b) -> a - b);
+                mergedMap.merge(slotType, slotTypeMap.get(slotType), (a, b) -> a - b);
         }
         return mergedMap;
     }
-
 
 
 }

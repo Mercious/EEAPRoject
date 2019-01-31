@@ -1,16 +1,16 @@
 package org.pcConfigurator.entities;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Collections;
+import java.util.Objects;
+import java.util.Set;
 
 @Entity
 public class User {
     @Id
     @GeneratedValue
-    private long id;
+    private Long id;
     @Column(unique = true)
     private String userName;
     private String firstName;
@@ -24,12 +24,15 @@ public class User {
     private String country;
     private String password;
 
+    @OneToMany(cascade = CascadeType.ALL)
+    private Set<Configuration> savedConfigurations = Collections.emptySet();
 
-    public long getId() {
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -111,5 +114,36 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Set<Configuration> getSavedConfigurations() {
+        return savedConfigurations;
+    }
+
+    public void setSavedConfigurations(final Set<Configuration> savedConfigurations) {
+        this.savedConfigurations = savedConfigurations;
+    }
+
+    public void addConfiguration(final Configuration configuration) {
+        this.savedConfigurations.add(configuration);
+    }
+
+    public void removeConfiguration(final Configuration configuration) {
+        this.savedConfigurations.remove(configuration);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (userName == null || userName.isEmpty()) return super.equals(o);
+        User user = (User) o;
+        return Objects.equals(userName, user.userName);
+    }
+
+    @Override
+    public int hashCode() {
+        if (userName == null || userName.isEmpty()) return super.hashCode();
+        return Objects.hash(userName);
     }
 }

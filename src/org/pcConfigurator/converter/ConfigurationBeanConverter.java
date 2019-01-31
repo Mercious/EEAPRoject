@@ -27,7 +27,7 @@ public class ConfigurationBeanConverter implements Converter {
 
         try {
             return this.configurationService.getConfigurationBeanForId(Long.valueOf(submittedValue));
-        } catch (NumberFormatException  e) {
+        } catch (NumberFormatException e) {
             throw new ConverterException(new FacesMessage(String.format("%s is not a valid Configuration ID", submittedValue)), e);
         }
     }

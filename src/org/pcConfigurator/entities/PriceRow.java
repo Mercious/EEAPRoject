@@ -3,13 +3,14 @@ package org.pcConfigurator.entities;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.Objects;
 
 @Entity
 public class PriceRow {
 
     @GeneratedValue
     @Id
-    private long id;
+    private Long id;
 
     private BigDecimal netPrice;
     private double taxMultiplier;
@@ -20,11 +21,11 @@ public class PriceRow {
     private boolean promotion;
 
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -66,5 +67,20 @@ public class PriceRow {
 
     public void setPromotion(boolean promotion) {
         this.promotion = promotion;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (id == null) return super.equals(o);
+        PriceRow priceRow = (PriceRow) o;
+        return Objects.equals(id, priceRow.id);
+    }
+
+    @Override
+    public int hashCode() {
+        if (id == null) return super.hashCode();
+        return Objects.hash(id);
     }
 }

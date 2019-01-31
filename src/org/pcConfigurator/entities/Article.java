@@ -8,7 +8,7 @@ import java.util.*;
 @Entity
 public class Article {
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long articleID;
     // business key
     @Column(unique = true)
@@ -16,7 +16,7 @@ public class Article {
     // Frontend-Display Name
     private String displayName;
 
-    @OneToMany (cascade = CascadeType.ALL )
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinTable
     private Set<PriceRow> priceRows = Collections.emptySet();
 
@@ -25,14 +25,15 @@ public class Article {
 
     // Welche Slots dieser Artikel benötigt (Komponente) oder bereitstellt (Motherboard)
     // Die Restrictions interessieren uns eigentlich IMMER, also fetche sie eager
-    @OneToMany (cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<SlotRestriction> slotRestrictions = Collections.emptySet();
 
     public Article(final String articleName) {
         this.articleName = articleName;
     }
 
-    protected Article() {}
+    protected Article() {
+    }
 
     public Long getArticleID() {
         return articleID;
@@ -107,10 +108,10 @@ public class Article {
         BigDecimal currentLowest = null;
         for (PriceRow priceRow : this.getPriceRows()) {
             if (priceRow.getValidFrom().before(new Date()) && priceRow.getValidUntil().after(new Date())
-            && (!priceRow.isPromotion() || discountAllowed)) { // discountAllowed = true -> promotion und nicht promotion preise berücksichtigen
+                    && (!priceRow.isPromotion() || discountAllowed)) { // discountAllowed = true -> promotion und nicht promotion preise berücksichtigen
                 if (currentLowest == null)
                     currentLowest = priceRow.getNetPrice().multiply(BigDecimal.valueOf(priceRow.getTaxMultiplier()));
-                else if(currentLowest.compareTo(priceRow.getNetPrice().multiply(BigDecimal.valueOf(priceRow.getTaxMultiplier()))) < 0)
+                else if (currentLowest.compareTo(priceRow.getNetPrice().multiply(BigDecimal.valueOf(priceRow.getTaxMultiplier()))) < 0)
                     currentLowest = priceRow.getNetPrice();
             }
         }
@@ -118,17 +119,18 @@ public class Article {
     }
 
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+        if (articleName == null || articleName.isEmpty()) return super.equals(o);
         Article article = (Article) o;
         return Objects.equals(articleName, article.articleName);
     }
 
     @Override
     public int hashCode() {
+        if (articleName == null || articleName.isEmpty()) return super.hashCode();
         return Objects.hash(articleName);
     }
 }

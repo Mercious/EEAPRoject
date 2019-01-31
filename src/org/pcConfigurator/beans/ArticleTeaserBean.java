@@ -8,6 +8,7 @@ public class ArticleTeaserBean {
     private String articleName;
     private String articleDisplayName;
     private boolean compStatus;
+    private int deliveryTime;
 
 
     public long getArticleID() {
@@ -56,5 +57,13 @@ public class ArticleTeaserBean {
 
     public void setCompStatus(boolean compStatus) {
         this.compStatus = compStatus;
+    }
+
+    public int getDeliveryTime() {
+        return deliveryTime;
+    }
+
+    public void setDeliveryTime(int deliveryTime) {
+        this.deliveryTime = deliveryTime;
     }
 }

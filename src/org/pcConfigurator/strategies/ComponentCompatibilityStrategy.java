@@ -1,11 +1,13 @@
 package org.pcConfigurator.strategies;
 
 import org.pcConfigurator.beans.ConfigurationBean;
-import org.pcConfigurator.entities.*;
+import org.pcConfigurator.entities.Article;
+import org.pcConfigurator.entities.ComponentType;
+import org.pcConfigurator.entities.SlotRestrictionType;
+import org.pcConfigurator.entities.SlotType;
 
 import javax.ejb.Stateless;
 import java.util.HashMap;
-import java.util.Set;
 
 @Stateless
 public class ComponentCompatibilityStrategy extends AbstractCompatbilityStrategy implements CompatibilityStrategy {
@@ -24,11 +26,11 @@ public class ComponentCompatibilityStrategy extends AbstractCompatbilityStrategy
 
         for (Article containedArticle : currentConfig.getConfiguredComponents()) {
             if (ComponentType.MB.equals(containedArticle.getType())) {
-               HashMap<SlotType, Integer> componentRequiredSlots = article.getSlotRestrictionsOfType(SlotRestrictionType.REQUIRES);
-               // We check that if we add this component, whether or not the totally provided slots are still enough
+                HashMap<SlotType, Integer> componentRequiredSlots = article.getSlotRestrictionsOfType(SlotRestrictionType.REQUIRES);
+                // We check that if we add this component, whether or not the totally provided slots are still enough
                 // after we added this components requirements
-               return compareSlotTypeMapForCoverage(mergeSlotTypeMaps(currentConfig.getTotalRequiredSots(),
-                       componentRequiredSlots), currentConfig.getTotalProvidedSlots());
+                return compareSlotTypeMapForCoverage(mergeSlotTypeMaps(currentConfig.getTotalRequiredSots(),
+                        componentRequiredSlots), currentConfig.getTotalProvidedSlots());
             }
         }
         // kein Motherboard gefunden -> Artikel ist erstmal kompatibel, Entscheidung fällt dann beim Motherboard

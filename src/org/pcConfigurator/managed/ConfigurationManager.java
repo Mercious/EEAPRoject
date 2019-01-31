@@ -5,12 +5,12 @@ import org.pcConfigurator.beans.ArticleTeaserBean;
 import org.pcConfigurator.beans.ConfigurationBean;
 import org.pcConfigurator.beans.UserBean;
 import org.pcConfigurator.converter.ArticleToArticleTeaserBeanConverter;
-import org.pcConfigurator.converter.ConfigurationToConfiguratorBean;
-import org.pcConfigurator.entities.*;
+import org.pcConfigurator.entities.Article;
+import org.pcConfigurator.entities.ComponentType;
+import org.pcConfigurator.entities.SlotRestrictionType;
 import org.pcConfigurator.services.ArticleService;
-import org.pcConfigurator.services.ConfigurationService;
+import org.pcConfigurator.services.UserService;
 
-import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
@@ -22,6 +22,7 @@ import java.io.Serializable;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 /*
     Hier soll die Logik des Konfigurierens und damit auch was der User als Option im Frontend angezeigt bekommt stattfinden.
@@ -38,14 +39,12 @@ import java.util.List;
 public class ConfigurationManager implements Serializable {
     private ConfigurationBean currentConfiguration = new ConfigurationBean();
 
+
     @Inject
     private ArticleService articleService;
 
     @Inject
-    private ConfigurationService configurationService;
-
-    @Inject
-    private ConfigurationToConfiguratorBean configurationToConfiguratorBean;
+    private UserService userService;
 
     @Inject
     private ArticleToArticleTeaserBeanConverter articleToArticleTeaserBeanConverter;
@@ -59,16 +58,14 @@ public class ConfigurationManager implements Serializable {
 
     private DecimalFormat priceFormat = new DecimalFormat("##.##");
 
-
-    // TODO : Fehlerhaftes verhalten bei dem Szenario: User besucht Konfigrator -> User logt sich ein -> user besucht wieder Konfig
-    // Liste an persistierten Konfigurationen bleibt leer, weil sie hier bereits vorher initilisiert wurde (als es noch keinen User gab)
-    // @PostConstruct
+    // Wird über preRenderEvent geladen statt @PostConstruct, da in der Kombination: User besucht Konfigurator ->
+    // User loggt sich ein -> User besucht Konfigurator sonst keine Liste angezeigt wird, da der ConfigurationManager
+    // vorher erzeugt wurde
     public void loadSavedConfigurations() {
         if (this.getCurrentUser() != null)
-            this.savedConfigurations = new ArrayList<>(this.configurationService.getSavedConfigurationBeansForUser(this.getCurrentUser()));
+            this.savedConfigurations = new ArrayList<>(
+                    this.userService.getSavedConfigurationsForUserBean(getCurrentUser().getUserName()));
     }
-
-
 
 
     public ConfigurationBean getCurrentConfiguration() {
@@ -99,9 +96,8 @@ public class ConfigurationManager implements Serializable {
         try {
             ec.redirect(((HttpServletRequest) ec.getRequest()).getContextPath() + "/configurator.xhtml?faces-redirect=true");
         } catch (IOException e) {
-            // error handeling
+            /// error handeling
         }
-
 
 
     }
@@ -137,7 +133,7 @@ public class ConfigurationManager implements Serializable {
     public ArticleTeaserBean getArticleInSlot(final String slotName) {
         ComponentType componentType = ComponentType.valueOf(slotName);
         return articleToArticleTeaserBeanConverter.convertConsideringCompatibility(this.currentConfiguration.getConfiguredComponents().stream()
-                .filter(article -> article.getType().equals(componentType)).findFirst().orElse(null), false);
+                .filter(article -> article.getType().equals(componentType)).findFirst().orElse(null), false, false);
     }
 
     public List<ArticleTeaserBean> getCurrentItemList() {
@@ -155,17 +151,13 @@ public class ConfigurationManager implements Serializable {
     public void saveConfiguration() {
         if (currentConfiguration.getConfiguredComponents() == null || currentConfiguration.getConfiguredComponents().isEmpty()
                 || getCurrentUser() == null) {
-            // Button sollte gar nicht enabled sein -> war manuelle Post-Request / Eingriff, benötigt keine Information
-            // (Button ist erst dann enabled, wenn die Konfiguration mindestens einen Eintrag hat und wenn es einen eingeloggten
-            // User gibt)
+
             return;
         }
 
-
-        this.currentConfiguration.setCreator(getCurrentUser());
-        this.configurationService.saveConfigurationBean(currentConfiguration);
-        // reload Konfigurationen weil ja nun eine neue hinzugekommen ist -> die ID ist aber erst nach dem Persistieren vergeben
-        // also müssen wir sie neu aus der Datenbank holen
+        this.userService.saveConfigurationBeanForUserBean(currentConfiguration, getCurrentUser());
+        // Persistierte Konfigurationen neu laden -> currentConfiguration bleibt ID-los, dient dem Nutzer zum Anlegen neuer Konfigurationen
+        // bis er auf eine der gespeicherten wechselt (weil dann nicht mehr ID-los)
         this.loadSavedConfigurations();
 
     }

@@ -22,7 +22,7 @@ public class DefaultArticleRepository implements ArticleRepository {
 
     @Override
     public Article findOne(long articleID) {
-       return this.entityManager.find(Article.class, articleID);
+        return this.entityManager.find(Article.class, articleID);
     }
 
     @Override
@@ -48,6 +48,13 @@ public class DefaultArticleRepository implements ArticleRepository {
     public Set<Article> searchByArticleName(String articleName) {
         TypedQuery<Article> query = entityManager.createQuery("select a from Article a where a.displayName LIKE :displayName", Article.class);
         query.setParameter("displayName", articleName);
+        return new HashSet<>(query.getResultList());
+    }
+
+    @Override
+    public Set<Article> performSearch(String searchWord) {
+        TypedQuery<Article> query = this.entityManager.createQuery("select a from Article a where a.displayName like :searchWord", Article.class);
+        query.setParameter("searchWord", '%' + searchWord + '%');
         return new HashSet<>(query.getResultList());
     }
 }

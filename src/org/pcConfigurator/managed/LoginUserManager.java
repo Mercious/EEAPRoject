@@ -14,6 +14,7 @@ import javax.inject.Named;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.util.logging.Logger;
 
 @SessionScoped
 @Named
@@ -24,6 +25,7 @@ public class LoginUserManager implements Serializable {
     @NotNull
     @Size(min = 5, max = 100)
     private String password;
+
 
     private UserBean currentUser;
 
@@ -49,7 +51,7 @@ public class LoginUserManager implements Serializable {
 
     public String login() {
         User loggedUser = this.userService.loginUser(userName, password);
-        if (loggedUser != null ) {
+        if (loggedUser != null) {
             this.setCurrentUser(new UserBean(loggedUser.getUserName(), loggedUser.getFirstName(), loggedUser.getLastName()));
             return "index.xhtml?face-redirect=true";
         }

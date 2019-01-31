@@ -1,11 +1,13 @@
 package org.pcConfigurator.strategies;
 
 import org.pcConfigurator.beans.ConfigurationBean;
-import org.pcConfigurator.entities.*;
+import org.pcConfigurator.entities.Article;
+import org.pcConfigurator.entities.ComponentType;
+import org.pcConfigurator.entities.SlotRestrictionType;
+import org.pcConfigurator.entities.SlotType;
 
 import javax.ejb.Stateless;
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.HashMap;
 
 @Stateless
 public class MotherboardCompatibilityStrategy extends AbstractCompatbilityStrategy implements CompatibilityStrategy {

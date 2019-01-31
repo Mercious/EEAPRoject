@@ -5,12 +5,19 @@ import org.pcConfigurator.entities.ComponentType;
 
 import java.util.Set;
 
-public interface  ArticleRepository {
-    public Set<Article> findAll();
-    public Article findOne(final long articleID);
-    public Set<Article> findByArticleName(final String articleName);
-    public Set<Article> findAllDiscountedArticles();
-    public Set<Article> findByComponentType(final ComponentType componentType);
-    public Set<Article> searchByArticleName(final String articleName);
+public interface ArticleRepository {
+    Set<Article> findAll();
+
+    Article findOne(final long articleID);
+
+    Set<Article> findByArticleName(final String articleName);
+
+    Set<Article> findAllDiscountedArticles();
+
+    Set<Article> findByComponentType(final ComponentType componentType);
+
+    Set<Article> searchByArticleName(final String articleName);
+
+    Set<Article> performSearch(final String searchWord);
 
 }

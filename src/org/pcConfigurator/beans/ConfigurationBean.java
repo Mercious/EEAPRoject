@@ -3,10 +3,12 @@ package org.pcConfigurator.beans;
 
 import org.pcConfigurator.entities.Article;
 import org.pcConfigurator.entities.SlotType;
-import org.pcConfigurator.entities.User;
 
 import java.math.BigDecimal;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Objects;
 
 /**
  * Repräsentiert die aktuelle Konfiguration eines Nutzers - also nicht persistiert. Wir verwenden hier eine etwas andere
@@ -17,7 +19,7 @@ import java.util.*;
  */
 public class ConfigurationBean {
 
-    private Double configurationId;
+    private Long configurationId;
     private UserBean creator;
     List<Article> configuredComponents = new ArrayList<>();
     private HashMap<SlotType, Integer> totalRequiredSots = new HashMap<>();
@@ -49,7 +51,7 @@ public class ConfigurationBean {
 
     public void addProvidedSlots(HashMap<SlotType, Integer> providedSlots) {
         for (SlotType slotType : providedSlots.keySet()) {
-            this.totalProvidedSlots.merge(slotType, providedSlots.get(slotType), (a,b) -> a + b);
+            this.totalProvidedSlots.merge(slotType, providedSlots.get(slotType), (a, b) -> a + b);
         }
     }
 
@@ -59,7 +61,7 @@ public class ConfigurationBean {
         if (this.totalProvidedSlots.get(slot) <= amount)
             this.totalProvidedSlots.remove(slot);
         else
-            this.totalProvidedSlots.merge(slot, amount, (a,b) -> a - b);
+            this.totalProvidedSlots.merge(slot, amount, (a, b) -> a - b);
     }
 
     public void removeProvidedSlots(final HashMap<SlotType, Integer> slots) {
@@ -74,7 +76,7 @@ public class ConfigurationBean {
 
     public void addRequiredSlots(HashMap<SlotType, Integer> requiredSlots) {
         for (SlotType slotType : requiredSlots.keySet()) {
-            this.totalRequiredSots.merge(slotType, requiredSlots.get(slotType), (a,b) -> a + b);
+            this.totalRequiredSots.merge(slotType, requiredSlots.get(slotType), (a, b) -> a + b);
         }
     }
 
@@ -84,7 +86,7 @@ public class ConfigurationBean {
         if (this.totalRequiredSots.get(requiredSlot) <= amount)
             this.totalRequiredSots.remove(requiredSlot);
         else
-            this.totalRequiredSots.merge(requiredSlot, amount, (a,b) -> a - b);
+            this.totalRequiredSots.merge(requiredSlot, amount, (a, b) -> a - b);
     }
 
     public void removeRequiredSlots(final HashMap<SlotType, Integer> requiredSlots) {
@@ -97,11 +99,11 @@ public class ConfigurationBean {
         this.totalRequiredSots = requiredSots;
     }
 
-    public Double getConfigurationId() {
+    public Long getConfigurationId() {
         return configurationId;
     }
 
-    public void setConfigurationId(Double configurationId) {
+    public void setConfigurationId(Long configurationId) {
         this.configurationId = configurationId;
     }
 
@@ -118,7 +120,7 @@ public class ConfigurationBean {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ConfigurationBean that = (ConfigurationBean) o;
-        return configurationId == that.configurationId;
+        return configurationId.equals(that.configurationId);
     }
 
     @Override

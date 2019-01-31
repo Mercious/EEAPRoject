@@ -1,12 +1,13 @@
 package org.pcConfigurator.entities;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 public class SlotRestriction {
     @Id
     @GeneratedValue
-    private long id;
+    private Long id;
     @Enumerated(EnumType.STRING)
     private SlotRestrictionType type;
     @ManyToOne
@@ -14,7 +15,9 @@ public class SlotRestriction {
 
     private int quantity;
 
-    public SlotRestriction() {}
+    public SlotRestriction() {
+    }
+
     public SlotRestriction(SlotRestrictionType type, SlotType relatedSlotType, Integer quantity) {
         this.type = type;
         this.relatedSlotType = relatedSlotType;
@@ -53,11 +56,26 @@ public class SlotRestriction {
         this.quantity = quantity;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (id == null) return super.equals(o);
+        SlotRestriction that = (SlotRestriction) o;
+        return Objects.equals(id, that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        if (id == null) return super.hashCode();
+        return Objects.hash(id);
     }
 }

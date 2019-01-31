@@ -11,7 +11,7 @@ import java.io.Serializable;
 @Named
 public class RegisterData implements Serializable {
     @NotNull
-    @Size (min = 2, max = 100)
+    @Size(min = 2, max = 100)
     private String firstName;
     @NotNull
     @Size(min = 2, max = 100)

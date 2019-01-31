@@ -8,11 +8,9 @@
     <ui:param name="pageTitle" value="pcConfigurator Suchergebnisse"/>
     <ui:define name="content">
     <div class="container">
-        <div class="headline">Ihre Suchergebnise</div>
+        <div class="headline">Ihre Suchergebnisse</div>
         <ui:repeat value="#{searchManager.resultList}" var="article">
-            <em:articleTeaser articleDisplayName="${article.articleDisplayName}" articleID="${article.articleID}"
-                              articlePrice="${article.price}" discountedPrice="${article.discountedPrice}"
-                              compStatus="${article.compStatus}"/>
+            <em:articleTeaser articleBean="#{article}"/>
         </ui:repeat>
     </div>
     </ui:define>

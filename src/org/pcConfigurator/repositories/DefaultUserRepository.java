@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 
 public class DefaultUserRepository implements UserRepository, Serializable {
@@ -15,7 +16,7 @@ public class DefaultUserRepository implements UserRepository, Serializable {
 
     @Override
     public Set<User> findAll() {
-        return null;
+        return new HashSet<>(this.entityManager.createQuery("select U from User u", User.class).getResultList());
     }
 
     @Override
@@ -32,6 +33,9 @@ public class DefaultUserRepository implements UserRepository, Serializable {
 
     @Override
     public void save(final User user) {
-        this.entityManager.persist(user);
+        if (user.getId() != null)
+            this.entityManager.merge(user);
+        else
+            this.entityManager.persist(user);
     }
 }

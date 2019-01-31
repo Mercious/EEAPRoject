@@ -28,7 +28,7 @@ public class DefaultArticleService implements ArticleService, Serializable {
     private ArticleRepository articleRepository;
 
     @Inject
-    Instance<CompatibilityStrategy> compatibilityStrategies;
+    private Instance<CompatibilityStrategy> compatibilityStrategies;
 
     @Inject
     private ArticleToArticleTeaserBeanConverter articleToArticleTeaserBeanConverter;
@@ -53,15 +53,20 @@ public class DefaultArticleService implements ArticleService, Serializable {
             }
             return true;
         }).map(article -> this.articleToArticleTeaserBeanConverter
-                .convertConsideringCompatibility(article, false)).collect(Collectors.toSet());
+                .convertConsideringCompatibility(article, false, false)).collect(Collectors.toSet());
     }
 
     public Article getArticleForArticleTeaserBean(final ArticleTeaserBean source) {
-       return this.articleRepository.findOne(source.getArticleID());
+        return this.articleRepository.findOne(source.getArticleID());
     }
 
     @Override
     public List<ArticleTeaserBean> searchArticleByName(String articleName) {
+        return null;
+    }
+
+    @Override
+    public Set<ArticleTeaserBean> performSearch(String searchWord) {
         return null;
     }
 
@@ -156,7 +161,6 @@ public class DefaultArticleService implements ArticleService, Serializable {
         per_4.setSlotName("VGA");
         per_4.setDescription("This slot fits monitors, usually ending up using onboard-graphiccards on old motherboards.");
         entityManager.persist(per_4);
-
 
 
         // next is a few motherboards with a wild combination of supported slot types
@@ -526,7 +530,6 @@ public class DefaultArticleService implements ArticleService, Serializable {
         dummyCPU_16.setType(ComponentType.CPU);
         dummyCPU_16.setSlotRestrictions(slotRestrictions);
         entityManager.persist(dummyCPU_16);
-
 
 
         // GPUs
