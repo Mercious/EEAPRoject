@@ -56,7 +56,7 @@ ul{
 
 
 /* Header **/
-header{
+.header{
     padding-top:5px;
     min-height: 70px;
     border-bottom:#e8491d 3px solid;
@@ -64,24 +64,24 @@ header{
 
 }
 
-header a{
+li a{
     color:#ffffff;
     text-decoration:none;
     text-transform: uppercase;
     font-size:16px;
+    float:left;
 }
 
-header li{
-    float:left;
+.header li{
+    float:right;
     background: #e8491d;
     padding-right: 50px;
     list-style-type: none;
+    padding-top: 20px;
 
 }
 
-header li:last-child {
-    padding-right: 0;
-}
+
 
 header img {
 }

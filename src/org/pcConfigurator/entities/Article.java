@@ -1,10 +1,8 @@
 package org.pcConfigurator.entities;
 
 import javax.persistence.*;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Objects;
-import java.util.Set;
+import java.math.BigDecimal;
+import java.util.*;
 
 
 @Entity
@@ -104,6 +102,21 @@ public class Article {
         }
         return slotRelationOfType;
     }
+
+    public BigDecimal getLowestTodayValidPrice(final boolean discountAllowed) {
+        BigDecimal currentLowest = null;
+        for (PriceRow priceRow : this.getPriceRows()) {
+            if (priceRow.getValidFrom().before(new Date()) && priceRow.getValidUntil().after(new Date())
+            && (discountAllowed || priceRow.isPromotion())) { // TODO FIX THIS 
+                if (currentLowest == null)
+                    currentLowest = priceRow.getNetPrice().multiply(BigDecimal.valueOf(priceRow.getTaxMultiplier()));
+                else if(currentLowest.compareTo(priceRow.getNetPrice().multiply(BigDecimal.valueOf(priceRow.getTaxMultiplier()))) < 0)
+                    currentLowest = priceRow.getNetPrice();
+            }
+        }
+        return currentLowest;
+    }
+
 
 
     @Override

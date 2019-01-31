@@ -1,8 +1,6 @@
 package org.pcConfigurator.managed;
 
 
-import org.eclipse.persistence.internal.oxm.mappings.Login;
-import org.pcConfigurator.annotations.CurrentUser;
 import org.pcConfigurator.beans.ArticleTeaserBean;
 import org.pcConfigurator.beans.ConfigurationBean;
 import org.pcConfigurator.beans.UserBean;
@@ -22,12 +20,8 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.io.Serializable;
 import java.text.DecimalFormat;
-import java.text.NumberFormat;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
-import java.util.Set;
 
 /*
     Hier soll die Logik des Konfigurierens und damit auch was der User als Option im Frontend angezeigt bekommt stattfinden.
@@ -63,7 +57,18 @@ public class ConfigurationManager implements Serializable {
 
     private List<ConfigurationBean> savedConfigurations = new ArrayList<>();
 
-    private String totalPrice = "0.00";
+    private DecimalFormat priceFormat = new DecimalFormat("##.00");
+
+
+    // TODO : Fehlerhaftes verhalten bei dem Szenario: User besucht Konfigrator -> User logt sich ein -> user besucht wieder Konfig
+    // Liste an persistierten Konfigurationen bleibt leer, weil sie hier bereits vorher initilisiert wurde (als es noch keinen User gab)
+    @PostConstruct
+    public void loadSavedConfigurations() {
+        if (this.getCurrentUser() != null)
+            this.savedConfigurations = new ArrayList<>(this.configurationService.getSavedConfigurationBeansForUser(this.getCurrentUser()));
+    }
+
+
 
 
     public ConfigurationBean getCurrentConfiguration() {
@@ -89,7 +94,6 @@ public class ConfigurationManager implements Serializable {
         // Item-Liste wieder ausblenden
         currentItemList = null;
         DecimalFormat df = new DecimalFormat("#.00");
-        this.totalPrice = df.format(convertPriceStringToDouble(this.totalPrice) + convertPriceStringToDouble(toAddTeaserBean.getPrice()));
 
         ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();
         try {
@@ -109,7 +113,6 @@ public class ConfigurationManager implements Serializable {
         currentConfiguration.removeRequiredSlots(toRemoveComponent.getSlotRestrictionsOfType(SlotRestrictionType.REQUIRES));
         currentConfiguration.removeProvidedSlots(toRemoveComponent.getSlotRestrictionsOfType(SlotRestrictionType.PROVIDES));
         DecimalFormat df = new DecimalFormat("#.00");
-        this.totalPrice = df.format(convertPriceStringToDouble(this.totalPrice) - convertPriceStringToDouble(toRemoveTeaserBean.getPrice()));
         ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();
         try {
             ec.redirect(((HttpServletRequest) ec.getRequest()).getRequestURI() + "?faces-redirect=true");
@@ -141,23 +144,7 @@ public class ConfigurationManager implements Serializable {
     }
 
     public String getTotalPrice() {
-        return totalPrice;
-    }
-
-    private double convertPriceStringToDouble(final String priceString) {
-        // Französische Locale für ',' als Seperator
-        NumberFormat nf = NumberFormat.getInstance(Locale.FRANCE);
-        try {
-            return nf.parse(priceString).doubleValue();
-        } catch (ParseException e) {
-            return 0;
-        }
-    }
-
-    @PostConstruct
-    public void loadSavedConfigurations() {
-        if (this.getCurrentUser() != null)
-            this.savedConfigurations = new ArrayList<>(this.configurationService.getSavedConfigurationBeansForUser(this.getCurrentUser()));
+        return this.priceFormat.format(this.currentConfiguration.getTotalPrice());
     }
 
     public List<ConfigurationBean> getSavedConfigurations() {
@@ -175,16 +162,6 @@ public class ConfigurationManager implements Serializable {
         this.currentConfiguration.setCreator(getCurrentUser());
         this.configurationService.saveConfigurationBean(currentConfiguration);
         this.loadSavedConfigurations();
-
-    }
-
-    public void changeConfigurationTo(final long configurationId) {
-        this.currentConfiguration = this.savedConfigurations.stream()
-                .filter(configurationBean -> configurationBean.getConfigurationId() == configurationId).findFirst()
-                .orElse(null);
-
-        // Falls null dann wurde wieder manipuliert, da der User überhaupt keine Konfiguration zur Auswahl haben sollte,
-        // die nicht existiert -> wir sparen uns wieder das Anzeigen von Fehlermeldungen
 
     }
 

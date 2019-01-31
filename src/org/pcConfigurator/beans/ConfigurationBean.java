@@ -5,6 +5,7 @@ import org.pcConfigurator.entities.Article;
 import org.pcConfigurator.entities.SlotType;
 import org.pcConfigurator.entities.User;
 
+import java.math.BigDecimal;
 import java.util.*;
 
 /**
@@ -123,5 +124,10 @@ public class ConfigurationBean {
     @Override
     public int hashCode() {
         return Objects.hash(configurationId);
+    }
+
+    public BigDecimal getTotalPrice() {
+        return this.getConfiguredComponents().stream().map(article -> article.getLowestTodayValidPrice(true))
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
     }
 }

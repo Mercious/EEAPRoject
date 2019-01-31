@@ -46,9 +46,11 @@
                <h:form>
                 <h:selectOneMenu value="#{configurationManager.currentConfiguration}"
                                  converter="#{configurationBeanConverter}" rendered="#{not empty configurationManager.savedConfigurations}">
+                    <f:selectItem itemValue="#{configurationManager.currentConfiguration}"
+                                  itemLabel="Neue Konfiguration" noSelectionOption="true"/>
                     <f:selectItems value="#{configurationManager.savedConfigurations}" var="config"
                                    itemValue="#{config}" itemLabel="#{config.configurationId}"/>
-                    <f:ajax update="savedConfigsSelect"/>
+                    <f:ajax update="savedConfigsSelect" render=":configurationArea"/>
                 </h:selectOneMenu>
                </h:form>
             </h:panelGroup>
