@@ -16,6 +16,12 @@ public class ComponentCompatibilityStrategy extends AbstractCompatbilityStrategy
         if (article.getSlotRestrictions().isEmpty())
             return true;
 
+        // Die Konfiguration hat bereits einen Artikel dieses Typen -> Nur für Peripherals erlaubt, ansonsten nicht, da Slot belegt
+        if (!ComponentType.PERIPHERAL.equals(article.getType()) && currentConfig.getConfiguredComponents().stream().filter(
+                configuredComponent -> configuredComponent.getType().equals(article.getType())).findFirst().orElse(null)
+                != null)
+            return false;
+
         for (Article containedArticle : currentConfig.getConfiguredComponents()) {
             if (ComponentType.MB.equals(containedArticle.getType())) {
                HashMap<SlotType, Integer> componentRequiredSlots = article.getSlotRestrictionsOfType(SlotRestrictionType.REQUIRES);

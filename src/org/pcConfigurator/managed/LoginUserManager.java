@@ -8,6 +8,7 @@ import org.pcConfigurator.util.FacesMessageUtil;
 
 import javax.enterprise.context.SessionScoped;
 import javax.enterprise.inject.Produces;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.validation.constraints.NotNull;
@@ -57,8 +58,9 @@ public class LoginUserManager implements Serializable {
         return null;
     }
 
-    public void logout() {
-        this.setCurrentUser(null);
+    public String logout() {
+        FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+        return "/index.xhtml?faces-redirect=true";
     }
 
     public boolean isLoggedIn() {

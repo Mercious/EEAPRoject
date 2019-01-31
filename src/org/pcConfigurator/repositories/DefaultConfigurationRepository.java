@@ -27,7 +27,10 @@ public class DefaultConfigurationRepository implements ConfigurationRepository {
 
     @Override
     public void save(Configuration configuration) {
-        this.entityManager.persist(configuration);
+        if (configuration.getId() == null)
+            this.entityManager.persist(configuration);
+        else
+            this.entityManager.merge(configuration);
     }
 
     @Override

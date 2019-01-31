@@ -9,7 +9,7 @@ import java.util.*;
 public class Article {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private long articleID;
+    private Long articleID;
     // business key
     @Column(unique = true)
     private String articleName;
@@ -34,11 +34,11 @@ public class Article {
 
     protected Article() {}
 
-    public long getArticleID() {
+    public Long getArticleID() {
         return articleID;
     }
 
-    public void setArticleID(long articleID) {
+    public void setArticleID(Long articleID) {
         this.articleID = articleID;
     }
 
@@ -85,7 +85,7 @@ public class Article {
                         , slotRestriction.getQuantity(), (a, b) -> a + b));
         return slotRelationOfType;*/
 
-        // EclipseLink seems to have a bug with lambdas in JPA entities -> do not use them here
+        // EclipseLink hat wohl ein bug mit lambdas in JPA entities -> müssen hier ausprogrammiert werden
         // Hat mich leider auch sehr viel Zeit gekostet
         // see https://stackoverflow.com/questions/8353752/jpa-error-uses-a-non-entity-class-ch-printsoft-mailhouse-usermgr-entity-departm
 
@@ -107,7 +107,7 @@ public class Article {
         BigDecimal currentLowest = null;
         for (PriceRow priceRow : this.getPriceRows()) {
             if (priceRow.getValidFrom().before(new Date()) && priceRow.getValidUntil().after(new Date())
-            && (discountAllowed || priceRow.isPromotion())) { // TODO FIX THIS 
+            && (!priceRow.isPromotion() || discountAllowed)) { // discountAllowed = true -> promotion und nicht promotion preise berücksichtigen
                 if (currentLowest == null)
                     currentLowest = priceRow.getNetPrice().multiply(BigDecimal.valueOf(priceRow.getTaxMultiplier()));
                 else if(currentLowest.compareTo(priceRow.getNetPrice().multiply(BigDecimal.valueOf(priceRow.getTaxMultiplier()))) < 0)

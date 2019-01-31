@@ -57,12 +57,12 @@ public class ConfigurationManager implements Serializable {
 
     private List<ConfigurationBean> savedConfigurations = new ArrayList<>();
 
-    private DecimalFormat priceFormat = new DecimalFormat("##.00");
+    private DecimalFormat priceFormat = new DecimalFormat("##.##");
 
 
     // TODO : Fehlerhaftes verhalten bei dem Szenario: User besucht Konfigrator -> User logt sich ein -> user besucht wieder Konfig
     // Liste an persistierten Konfigurationen bleibt leer, weil sie hier bereits vorher initilisiert wurde (als es noch keinen User gab)
-    @PostConstruct
+    // @PostConstruct
     public void loadSavedConfigurations() {
         if (this.getCurrentUser() != null)
             this.savedConfigurations = new ArrayList<>(this.configurationService.getSavedConfigurationBeansForUser(this.getCurrentUser()));
@@ -97,10 +97,11 @@ public class ConfigurationManager implements Serializable {
 
         ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();
         try {
-            ec.redirect(((HttpServletRequest) ec.getRequest()).getRequestURI() + "?faces-redirect=true");
+            ec.redirect(((HttpServletRequest) ec.getRequest()).getContextPath() + "/configurator.xhtml?faces-redirect=true");
         } catch (IOException e) {
             // error handeling
         }
+
 
 
     }
@@ -159,8 +160,12 @@ public class ConfigurationManager implements Serializable {
             // User gibt)
             return;
         }
+
+
         this.currentConfiguration.setCreator(getCurrentUser());
         this.configurationService.saveConfigurationBean(currentConfiguration);
+        // reload Konfigurationen weil ja nun eine neue hinzugekommen ist -> die ID ist aber erst nach dem Persistieren vergeben
+        // also müssen wir sie neu aus der Datenbank holen
         this.loadSavedConfigurations();
 
     }

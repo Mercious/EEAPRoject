@@ -2,7 +2,6 @@ package org.pcConfigurator.entities;
 
 import javax.persistence.*;
 import java.util.Collections;
-import java.util.List;
 import java.util.Set;
 
 /*
@@ -12,7 +11,7 @@ import java.util.Set;
 public class Configuration {
     @Id
     @GeneratedValue
-    private long id;
+    private Double id;
     // Wer hat diese Konfiguration erstellt, also wem gehört sie?
     @ManyToOne
     private User creator;
@@ -26,11 +25,11 @@ public class Configuration {
     )
     private Set<Article> configuredComponents = Collections.emptySet();
 
-    public long getId() {
+    public Double getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Double id) {
         this.id = id;
     }
 

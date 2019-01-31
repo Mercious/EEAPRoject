@@ -17,7 +17,7 @@ import java.util.*;
  */
 public class ConfigurationBean {
 
-    private long configurationId;
+    private Double configurationId;
     private UserBean creator;
     List<Article> configuredComponents = new ArrayList<>();
     private HashMap<SlotType, Integer> totalRequiredSots = new HashMap<>();
@@ -97,11 +97,11 @@ public class ConfigurationBean {
         this.totalRequiredSots = requiredSots;
     }
 
-    public long getConfigurationId() {
+    public Double getConfigurationId() {
         return configurationId;
     }
 
-    public void setConfigurationId(long configurationId) {
+    public void setConfigurationId(Double configurationId) {
         this.configurationId = configurationId;
     }
 

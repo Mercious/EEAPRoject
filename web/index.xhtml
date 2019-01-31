@@ -23,9 +23,7 @@
             <div class="container headline">Unsere Empfehlungen</div>
             <div class="container">
                 <c:forEach items="#{helloWorldController.getArticleTeaserList()}" var="article">
-                    <em:articleTeaser articleDisplayName="${article.articleDisplayName}" articleID="${article.articleID}"
-                                      articlePrice="${article.price}" discountedPrice="${article.discountedPrice}"
-                                      compStatus="${article.compStatus}"/>
+                    <em:articleTeaser articleBean="${article}"/>
                 </c:forEach>
             </div>
         </section>

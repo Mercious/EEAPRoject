@@ -5,30 +5,33 @@
 
 <h:body>
     <composite:interface>
-        <composite:attribute name="articleID" required="true"/>
-        <composite:attribute name="articleDisplayName" required="true"/>
-        <composite:attribute name="articlePrice" required="true"/>
-        <composite:attribute name="discountedPrice" required="true"/>
-        <composite:attribute name="compStatus" required="true"/>
+        <composite:attribute name="articleBean" required="true" type="org.pcConfigurator.beans.ArticleTeaserBean"/>
     </composite:interface>
 
     <composite:implementation>
-        <div id="article${cc.attrs.articleID}" class="articleTeaser white" data-articleID="${cc.attrs.articleID}">
-            <div class="teaserName">${cc.attrs.articleDisplayName}</div>
-            <img src="dummy_picture.jpg" class="centeredImage" alt="article teaser image for article ${articleID}"/>
-            <div class="priceLabel right ${not empty cc.attrs.discountedPrice ? 'strikethrough' : ''}">&#8364; ${cc.attrs.articlePrice}</div>
-            <c:if test="${not empty cc.attrs.discountedPrice}">
-                <div class="discountedPriceLabel right">&#8364; ${cc.attrs.discountedPrice}</div>
+        <div id="article#{cc.attrs.articleBean.articleID}" class="articleTeaser white">
+            <div class="teaserName">#{cc.attrs.articleBean.articleDisplayName}</div>
+            <img src="dummy_picture.jpg" class="centeredImage"
+                 alt="article teaser image for article #{cc.attrs.articleBean.articleID}"/>
+            <div class="priceLabel right #{not empty cc.attrs.articleBean.discountedPrice ? 'strikethrough' : ''}">&#8364;
+                #{cc.attrs.articleBean.price}</div>
+            <c:if test="#{not empty cc.attrs.articleBean.discountedPrice}">
+                <div class="discountedPriceLabel right">&#8364; #{cc.attrs.articleBean.discountedPrice}</div>
             </c:if>
-            <c:if test="${cc.attrs.compStatus}"><button type="submit" class="right" id="addButton${cc.attrs.articleID}">Hinzufuegen</button></c:if>
+            <c:if test="#{cc.attrs.articleBean.compStatus}">
+                <h:form>
+                    <h:commandButton class="right" value="Hinzufügen"
+                                     action="#{configurationManager.addArticleToConfiguration(cc.attrs.articleBean)}"/>
+                </h:form>
+            </c:if>
             <c:choose>
-                <c:when test="${cc.attrs.compStatus}">
-                    <img src="WebContent/png/check-mark.png" class="icon left" id="statusIcon${cc.attrs.articleID}" alt="compatibility status icon for article ${cc.attrs.articleID}"/>
-                    <div class="lightbox greenText">Artikel ist kompatibel mit Ihrer aktuellen Konfiguration!</div>
+                <c:when test="#{cc.attrs.articleBean.compStatus}">
+                    <img src="check_mark.png" class="icon left"
+                         alt="compatibility status icon for article #{cc.attrs.articleBean.articleID}"/>
                 </c:when>
                 <c:otherwise>
-                    <img src="WebContent/png/sign-warning-icon.png" class="iconWarning left" id="statusIcon${cc.attrs.articleID}" alt="compatibility status icon for article ${cc.attrs.articleID}"/>
-                    <div class="lightbox redText">Artikel ist nicht kompatibel mit Ihrer aktuellen Konfiguration!</div>
+                    <img src="warning_icon.png" class="iconWarning left"
+                         alt="compatibility status icon for article #{cc.attrs.articleBean.articleID}"/>
                 </c:otherwise>
             </c:choose>
         </div>

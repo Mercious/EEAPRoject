@@ -12,8 +12,14 @@ public class MotherboardCompatibilityStrategy extends AbstractCompatbilityStrate
 
     @Override
     public boolean isCompatibleToCurrentConfig(Article article, ConfigurationBean currentConfig) {
-       if (!this.isApplicable(article))
+        if (!this.isApplicable(article))
             return true;
+        // Die Konfiguration hat bereits ein Motherboard
+        if (currentConfig.getConfiguredComponents().stream()
+                .filter(configuredComponent -> configuredComponent.getType().equals(article.getType()))
+                .findFirst().orElse(null) != null)
+            return false;
+
 
         HashMap<SlotType, Integer> providedSlotsWithMB =
                 mergeSlotTypeMaps(article.getSlotRestrictionsOfType(SlotRestrictionType.PROVIDES), currentConfig.getTotalProvidedSlots());
@@ -24,7 +30,7 @@ public class MotherboardCompatibilityStrategy extends AbstractCompatbilityStrate
             // Slots die provideten Slots der betrachteten Komponente wieder raus
             HashMap<SlotType, Integer> totalProvidedSlotsWithoutComponent = removeSlotTypeMapFromOther
                     (configuredComponent.getSlotRestrictionsOfType(SlotRestrictionType.PROVIDES), providedSlotsWithMB);
-            if(!compareSlotTypeMapForCoverage(componentRequiredSlots, totalProvidedSlotsWithoutComponent))
+            if (!compareSlotTypeMapForCoverage(componentRequiredSlots, totalProvidedSlotsWithoutComponent))
                 return false;
             else
                 // Nun müssen wir natürlich für die weitere Betrachtung die gerade "verwendeten" Slots aus den zur Verfügung

@@ -8,6 +8,9 @@
 <ui:composition template="resources/emcomp/pageWithFooterHeader.xhtml">
     <ui:param name="pageTitle" value="pcConfigurator Konfiguration"/>
     <ui:define name="content">
+        <f:metadata>
+            <f:event type="preRenderView" listener="#{configurationManager.loadSavedConfigurations()}" />
+        </f:metadata>
         <h:panelGroup class="container" id="configurationArea" layout="block">
             <div class="headline">Ihre aktuelle Konfiguration</div>
 
@@ -45,7 +48,9 @@
             <h:panelGroup layout="block" id="savedConfigsSelect">
                <h:form>
                 <h:selectOneMenu value="#{configurationManager.currentConfiguration}"
-                                 converter="#{configurationBeanConverter}" rendered="#{not empty configurationManager.savedConfigurations}">
+                                 converter="#{configurationBeanConverter}"
+                                 rendered="#{not empty configurationManager.savedConfigurations}"
+                                 styleClass="configurationSelect">
                     <f:selectItem itemValue="#{configurationManager.currentConfiguration}"
                                   itemLabel="Neue Konfiguration" noSelectionOption="true"/>
                     <f:selectItems value="#{configurationManager.savedConfigurations}" var="config"

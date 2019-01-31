@@ -25,7 +25,6 @@ ul {
 input, label {
     display: block;
     width: 100%;
-    margin-right: 10px;
 }
 
 h3 {
@@ -486,4 +485,11 @@ header form {
 
 .addArticleImage {
     background-image: url(/dummy_picture.jpg)
+}
+
+.configurationSelect {
+    float: left;
+    width: 200px;
+    height: 50px;
+
 }
