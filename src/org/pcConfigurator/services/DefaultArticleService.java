@@ -67,7 +67,8 @@ public class DefaultArticleService implements ArticleService, Serializable {
 
     @Override
     public Set<ArticleTeaserBean> performSearch(String searchWord) {
-        return null;
+        return this.articleRepository.performSearch(searchWord).stream()
+                .map(article -> this.articleToArticleTeaserBeanConverter.convert(article)).collect(Collectors.toSet());
     }
 
     @Override

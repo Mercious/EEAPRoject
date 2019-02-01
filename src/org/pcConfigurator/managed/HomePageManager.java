@@ -1,4 +1,4 @@
-package org.pcConfigurator.controller;
+package org.pcConfigurator.managed;
 
 import org.pcConfigurator.beans.ArticleTeaserBean;
 import org.pcConfigurator.services.ArticleService;
@@ -11,7 +11,7 @@ import java.util.Set;
 
 @RequestScoped
 @Named
-public class HelloWorldController {
+public class HomePageManager {
 
     private Set<ArticleTeaserBean> articleTeaserList;
 

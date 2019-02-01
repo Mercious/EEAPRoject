@@ -19,7 +19,7 @@
                     <h:outputLabel for="userNameRegister">User Name:</h:outputLabel>
                     <h:inputText id="userNameRegister" name="userNameRegister" required="true" value="#{loginUserManager.userName}"/>
                     <h:outputLabel for="password">Passwort:</h:outputLabel>
-                    <h:inputText id="password" name="password" type="password" required="true"
+                    <h:inputSecret id="password" name="password" type="password" required="true"
                                  value="#{loginUserManager.password}"/>
                     <h:commandButton value="Anmelden" action="#{loginUserManager.login()}"/>
                 </h:form>

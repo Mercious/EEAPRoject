@@ -22,7 +22,7 @@
         <section>
             <div class="container headline">Unsere Empfehlungen</div>
             <div class="container">
-                <c:forEach items="#{helloWorldController.getArticleTeaserList()}" var="article">
+                <c:forEach items="#{homePageManager.getArticleTeaserList()}" var="article">
                     <em:articleTeaser articleBean="${article}"/>
                 </c:forEach>
             </div>

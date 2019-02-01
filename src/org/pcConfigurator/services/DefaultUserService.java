@@ -4,6 +4,7 @@ import org.pcConfigurator.beans.ConfigurationBean;
 import org.pcConfigurator.beans.UserBean;
 import org.pcConfigurator.converter.ConfigurationToConfigurationBeanConverter;
 import org.pcConfigurator.converter.RegisterDataToUserConverter;
+import org.pcConfigurator.entities.Configuration;
 import org.pcConfigurator.entities.User;
 import org.pcConfigurator.managed.RegisterData;
 import org.pcConfigurator.repositories.UserRepository;
@@ -59,6 +60,9 @@ public class DefaultUserService implements UserService, Serializable {
             // TODO: Logging
             return;
         }
+        Configuration configuration = this.configurationToConfigurationBeanConverter.from(configurationBean);
+        // Refresh falls die aktuelle Konfiguration schon existiert (ID)
+        user.getSavedConfigurations().remove(configuration);
         user.addConfiguration(configurationToConfigurationBeanConverter.from(configurationBean));
         this.userRepository.save(user);
     }

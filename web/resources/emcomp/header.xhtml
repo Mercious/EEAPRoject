@@ -17,8 +17,9 @@
     </div>
     <nav>
         <h:form>
-            <h:inputText value="#{searchManager.searchWord}" a:placeholder="Suchbegriff eingeben ..." styleClass="searchBar"/>
+            <h:inputText value="#{searchManager.searchWord}" styleClass="searchBar"/>
             <h:commandButton action="#{searchManager.search()}"/>
+            <h:button outcome="searchPage" style="display:none"/>
         </h:form>
         <ul>
             <li><a href="${pageContext.request.contextPath}/shop/index.xhtml">Startseite</a></li>

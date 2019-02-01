@@ -28,7 +28,12 @@ public class DefaultUserRepository implements UserRepository, Serializable {
     public User findByUserName(String userName) {
         TypedQuery<User> query = this.entityManager.createQuery("select u from User u where u.userName = :userName", User.class);
         query.setParameter("userName", userName);
-        return query.getSingleResult();
+        try {
+            return query.getSingleResult();
+        } catch (Exception e) {
+            // error handeling
+            return null;
+        }
     }
 
     @Override

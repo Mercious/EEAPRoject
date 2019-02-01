@@ -3,16 +3,18 @@ package org.pcConfigurator.managed;
 import org.pcConfigurator.beans.ArticleTeaserBean;
 import org.pcConfigurator.services.ArticleService;
 
+import javax.enterprise.context.RequestScoped;
 import javax.faces.bean.ViewScoped;
+import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
-@ViewScoped
+@RequestScoped
 @Named
 public class SearchManager {
 
@@ -21,12 +23,14 @@ public class SearchManager {
 
     private String searchWord = "";
 
-    private Set<ArticleTeaserBean> resultList = new HashSet<>();
+    private List<ArticleTeaserBean> resultList = new ArrayList<>();
 
 
     public String search() {
-        this.resultList = this.articleService.performSearch(searchWord);
-        return FacesContext.getCurrentInstance().getExternalContext().getContext() + "/shop/searchPage.xhtml?faces-redirect=true";
+        this.resultList = new ArrayList<>(this.articleService.performSearch(searchWord));
+        ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();
+        return ((HttpServletRequest) ec.getRequest()).getContextPath() + "/searchPage.xhtml";
+
     }
 
     public String getSearchWord() {
@@ -37,11 +41,11 @@ public class SearchManager {
         this.searchWord = searchWord;
     }
 
-    public Set<ArticleTeaserBean> getResultList() {
+    public List<ArticleTeaserBean> getResultList() {
         return resultList;
     }
 
-    public void setResultList(Set<ArticleTeaserBean> resultList) {
+    public void setResultList(List<ArticleTeaserBean> resultList) {
         this.resultList = resultList;
     }
 }

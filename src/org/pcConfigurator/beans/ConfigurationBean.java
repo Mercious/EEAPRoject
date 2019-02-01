@@ -119,12 +119,14 @@ public class ConfigurationBean {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+        if (configurationId == null ) return super.equals(o);
         ConfigurationBean that = (ConfigurationBean) o;
         return configurationId.equals(that.configurationId);
     }
 
     @Override
     public int hashCode() {
+        if(configurationId == null) return super.hashCode();
         return Objects.hash(configurationId);
     }
 

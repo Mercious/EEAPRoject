@@ -27,6 +27,7 @@ public class ConfigurationToConfigurationBeanConverter {
     public Configuration from(final ConfigurationBean source) {
         Configuration target = new Configuration();
         target.setConfiguredComponents(new HashSet<>(source.getConfiguredComponents()));
+        target.setId(source.getConfigurationId());
         return target;
     }
 }
